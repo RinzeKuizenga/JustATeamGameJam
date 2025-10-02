@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
 
 public class RButtons : MonoBehaviour
 {
@@ -27,7 +26,7 @@ public class RButtons : MonoBehaviour
         Vector2 v = Mouse.current.position.ReadValue();
         x_click = v.x;
         y_click = v.y;
-        click_dist = gameObject.transform.position.x - x_click+gameObject.transform.position.y - y_click;
+        click_dist = Mathf.Sqrt((gameObject.transform.position.x - x_click) * (gameObject.transform.position.x - x_click) + (gameObject.transform.position.y - y_click) * (gameObject.transform.position.y - y_click));
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
