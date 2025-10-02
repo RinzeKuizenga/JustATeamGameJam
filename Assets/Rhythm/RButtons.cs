@@ -5,8 +5,9 @@ using System.Collections;
 public class RButtons : MonoBehaviour
 {
     private InputActions input = null;
-    private int x_click=0;
-    private int y_click=0;
+    private float x_click=0;
+    private float y_click=0;
+    private float click_dist=0;
     private float timer = 0f;
 
     private void OnEnable()
@@ -23,8 +24,10 @@ public class RButtons : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext value)
     {
-        x_click = 0;
-        y_click = 0;
+        Vector2 v = Mouse.current.position.ReadValue();
+        x_click = v.x;
+        y_click = v.y;
+        click_dist = gameObject.transform.position.x - x_click+gameObject.transform.position.y - y_click;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
