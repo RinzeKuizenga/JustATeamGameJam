@@ -1,100 +1,54 @@
 using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 3f;
-    public float jumpForce = 500f;
-    public float groundCheckRadius = 0.2f;
-    public Transform groundCheck;
+    public float speed = 2f;
     public Animator animator;
-    private bool isGrounded = false;
-    private Rigidbody2D rg;
-    private InputActions input = null;
-    private Vector2 moveVector = new Vector2();
-    private Vector3 ogScale = Vector3.zero;
+    public Transform feet;
+    public float feetMargin = 0.2f;
+    private Vector2 moveDirection = Vector2.zero;
 
-    void Awake()
+    void Update()
     {
-        input = new InputActions();
-        rg = GetComponent<Rigidbody2D>();
-        ogScale = transform.localScale;
-    }
+        moveDirection = Vector2.zero;
+        if (Input.GetKey(KeyCode.A))
+            moveDirection += speed * Vector2.left;
+        if (Input.GetKey(KeyCode.D))
+            moveDirection += speed * Vector2.right;
+        if (Input.GetKey(KeyCode.W))
+            moveDirection += speed * Vector2.up;
+        if (Input.GetKey(KeyCode.S))
+            moveDirection += speed * Vector2.down;
 
-    void FixedUpdate()
-    {
-        // Do ground checks
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius);
+        if (moveDirection.x > 0)
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        else if (moveDirection.x < 0)
+            transform.localScale = new Vector3(1f, 1f, 1f);
 
-        isGrounded = false;
-        animator.SetBool("IsGrounded", false);
-        if (colliders.Length > 0)
-        {
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i].gameObject.layer != 6) // Player layer
-                {
-                    isGrounded = true;
-                    animator.ResetTrigger("Jump");
-                    animator.SetBool("IsGrounded", true);
-                    break;
-                }
-            }
-        }
-
-        // Move
-        rg.position += moveVector * speed * Time.deltaTime;
-
-        animator.SetFloat("yVelocity", rg.linearVelocity.y);
-
-        // Orient player
-        if (moveVector.x > 0)
-            transform.localScale = new Vector3(-ogScale.x, ogScale.y, ogScale.z);
-        else if (moveVector.x < 0)
-            transform.localScale = new Vector3(ogScale.x, ogScale.y, ogScale.z);
-
-        if (moveVector.x != 0)
-            animator.SetBool("IsMoving", true);
+        if (moveDirection.magnitude > 0f)
+            animator.SetBool("IsWalking", true);
         else
-            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsWalking", false);
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (input.Player.Jump.triggered)
-            Jump();
-    }
+        RaycastHit2D hit = Physics2D.Raycast(feet.position, Vector2.right, feetMargin);
+        if (hit && moveDirection.x > 0f)
+            moveDirection.x = 0f;
 
-    private void Jump()
-    {
-        if (!isGrounded)
-            return;
+        hit = Physics2D.Raycast(feet.position, Vector2.left, feetMargin);
+        if (hit && moveDirection.x < 0f)
+            moveDirection.x = 0f;
 
-        rg.AddForce(Vector2.up * jumpForce);
-        animator.SetTrigger("Jump");
-    }
+        hit = Physics2D.Raycast(feet.position, Vector2.down, feetMargin);
+        if (hit && moveDirection.y < 0f)
+            moveDirection.y = 0f;
 
-    private void OnEnable()
-    {
-        input.Enable();
-        input.Player.Move.performed += OnMovementPerformed;
-        input.Player.Move.canceled += OnMovementCanceled;
-    }
+        hit = Physics2D.Raycast(feet.position, Vector2.up, feetMargin);
+        if (hit && moveDirection.y > 0f)
+            moveDirection.y = 0f;
 
-    private void OnDisable()
-    {
-        input.Disable();
-        input.Player.Move.performed -= OnMovementPerformed;
-        input.Player.Move.canceled -= OnMovementCanceled;
-    }
-
-    private void OnMovementPerformed(InputAction.CallbackContext value)
-    {
-        moveVector = value.ReadValue<Vector2>();
-    }
-
-    private void OnMovementCanceled(InputAction.CallbackContext value)
-    {
-        moveVector = Vector2.zero;
+        transform.position += new Vector3(moveDirection.x, moveDirection.y, 0f) * Time.deltaTime;
     }
 }
