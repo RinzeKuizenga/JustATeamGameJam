@@ -8,6 +8,12 @@ public class Move : MonoBehaviour
     public Transform feet;
     public float feetMargin = 0.2f;
     private Vector2 moveDirection = Vector2.zero;
+    private Vector3 originalScale = Vector3.zero;
+
+    private void Start()
+    {
+        originalScale = transform.localScale;
+    }
 
     void Update()
     {
@@ -22,9 +28,9 @@ public class Move : MonoBehaviour
             moveDirection += speed * Vector2.down;
 
         if (moveDirection.x > 0)
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
         else if (moveDirection.x < 0)
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
 
         if (moveDirection.magnitude > 0f)
             animator.SetBool("IsWalking", true);
