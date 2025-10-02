@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements;
 
 public class RButtons : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class RButtons : MonoBehaviour
     public float size = 1;
     public float delay = 1f; //Must be over 0, else it'll always be perfect score
     //delay for great score, perfect is below 0.5 of it, it's in seconds
+    void Awake()
+    {
+        input = new InputActions();
+    }
 
     private void OnEnable()
     {
@@ -84,9 +89,7 @@ public class RButtons : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // We'll initialize our variables here
-        // Except public ones
-        input = new InputActions();
+        
     }
 
     // Update is called once per frame
