@@ -93,7 +93,7 @@ public class RButtons : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 10f)
+        if (timer > 3 * delay)
         {
             Destroy(gameObject);//destroyed after 10 secs
         }
