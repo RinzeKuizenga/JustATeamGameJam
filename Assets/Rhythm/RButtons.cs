@@ -5,26 +5,24 @@ using UnityEngine.UIElements;
 
 public class RButtons : MonoBehaviour
 {
-    private InputActions input = null;
     private float timer = 0f;
     public float size = 1;
     public float delay = 1f; //Must be over 0, else it'll always be perfect score
     //delay for great score, perfect is below 0.5 of it, it's in seconds
     void Awake()
     {
-        input = new InputActions();
+        
     }
 
     private void OnEnable()
     {
-        input.Enable();
-        input.UI.Click.performed += OnClick;
+        // Enable OnClick when opening
+        // It should be active when there's a click
     }
 
     private void OnDisable()
     {
-        input.Disable();
-        input.UI.Click.performed -= OnClick;
+        // Disable OnClick when leaving
     }
 
     private void OnClick(InputAction.CallbackContext value)
