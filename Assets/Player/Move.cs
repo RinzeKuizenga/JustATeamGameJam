@@ -21,10 +21,6 @@ public class Move : MonoBehaviour
     private void Start()
     {
         originalScale = transform.localScale;
-    }
-
-    private void Start()
-    {
         confirmation.gameObject.SetActive(false);
     }
 
