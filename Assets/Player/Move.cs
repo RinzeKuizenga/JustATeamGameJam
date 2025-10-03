@@ -13,30 +13,71 @@ public class Move : MonoBehaviour
     //can be changed to gameobjects too, just an extra step to convert them to transforms
     public float distanceToInteract = 10;
     // how far max to activate something
+    public GameObject confirmation;
+    public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
 
     void LoadAnimation() 
     { 
         
     }
 
+    private void Start()
+    {
+        confirmation.SetActive(false);
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        bool e = false;
+        foreach (Interactable t in interactables)
         {
-            foreach (Interactable t in interactables)
+            if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
             {
-                if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
+                    EToInteract.SetActive(true);
                     //do something
-
+                    if (t.prefabToLoad != null)
+                    {
+                        t.prefabToLoad.SetActive(true);
+                    }
+                    else if (t.sceneToLoad != null)
+                    {
+                        confirmation.SetActive(true);
+                    }
                     //animate with t.Animate()
                 }
-                else
+                /*
+                bool e = false;
+                foreach (Interactable i in interactables) 
+                { 
+                    if (i.gameObject.activeInHierarchy) 
+                    {
+                        e = true;
+                    }
+                }
+                EToInteract.SetActive(e);*/
+            }
+            if (t.gameObject.activeInHierarchy)
+            {
+                e = true;
+            }
+        }
+        EToInteract.SetActive(e);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        { 
+            confirmation.SetActive(false);
+            EToInteract.SetActive(false) ;
+            foreach (Interactable t in interactables)
+            {
+                if (t.prefabToLoad != null)
                 {
-                    //unanimate with t.UnAnimate()
+                    t.prefabToLoad.SetActive(false);
                 }
             }
         }
+        EToInteract.SetActive(false);
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
