@@ -1,18 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoomTransition : MonoBehaviour
 {
     public GameObject newRoom;
     public GameObject oldRoom;
+    public string spawnName = "Spawn";
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.tag != "Player")
+        if (collider.tag != "Player")
             return;
 
-        var playerT = collision.transform;
         Destroy(oldRoom);
         var room = Instantiate(newRoom);
-        playerT.position = room.transform.Find("Spawn").position + Vector3.back;
+        collider.transform.position = room.transform.Find(spawnName).position + Vector3.back;
     }
 }
