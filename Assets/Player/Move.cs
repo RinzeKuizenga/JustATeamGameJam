@@ -1,100 +1,82 @@
+using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 3f;
-    public float jumpForce = 500f;
-    public float groundCheckRadius = 0.2f;
-    public Transform groundCheck;
+    public float speed = 2f;
     public Animator animator;
-    private bool isGrounded = false;
-    private Rigidbody2D rg;
-    private InputActions input = null;
-    private Vector2 moveVector = new Vector2();
-    private Vector3 ogScale = Vector3.zero;
+    public Transform feet;
+    public float feetMargin = 0.2f;
+    public bool canMove = true;
+    private Vector2 moveDirection = Vector2.zero;
+    private Vector3 originalScale = Vector3.zero;
 
-    void Awake()
+    private void Start()
     {
-        input = new InputActions();
-        rg = GetComponent<Rigidbody2D>();
-        ogScale = transform.localScale;
+        originalScale = transform.localScale;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        // Do ground checks
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius);
-
-        isGrounded = false;
-        animator.SetBool("IsGrounded", false);
-        if (colliders.Length > 0)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            for (int i = 0; i < colliders.Length; i++)
+            foreach (Interactable t in interactables)
             {
-                if (colliders[i].gameObject.layer != 6) // Player layer
+                if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
                 {
-                    isGrounded = true;
-                    animator.ResetTrigger("Jump");
-                    animator.SetBool("IsGrounded", true);
-                    break;
+                    //do something
+
+                    //animate with t.Animate()
+                }
+                else
+                {
+                    //unanimate with t.UnAnimate()
                 }
             }
         }
+        moveDirection = Vector2.zero;
+        if (Input.GetKey(KeyCode.A))
+            moveDirection += speed * Vector2.left;
+        if (Input.GetKey(KeyCode.D))
+            moveDirection += speed * Vector2.right;
+        if (Input.GetKey(KeyCode.W))
+            moveDirection += speed * Vector2.up;
+        if (Input.GetKey(KeyCode.S))
+            moveDirection += speed * Vector2.down;
 
-        // Move
-        rg.position += moveVector * speed * Time.deltaTime;
+        if (moveDirection.x > 0)
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+        else if (moveDirection.x < 0)
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
 
-        animator.SetFloat("yVelocity", rg.linearVelocity.y);
-
-        // Orient player
-        if (moveVector.x > 0)
-            transform.localScale = new Vector3(-ogScale.x, ogScale.y, ogScale.z);
-        else if (moveVector.x < 0)
-            transform.localScale = new Vector3(ogScale.x, ogScale.y, ogScale.z);
-
-        if (moveVector.x != 0)
-            animator.SetBool("IsMoving", true);
+        if (moveDirection.magnitude > 0f)
+            animator.SetBool("IsWalking", true);
         else
-            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsWalking", false);
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (input.Player.Jump.triggered)
-            Jump();
-    }
-
-    private void Jump()
-    {
-        if (!isGrounded)
+        if (!canMove)
             return;
 
-        rg.AddForce(Vector2.up * jumpForce);
-        animator.SetTrigger("Jump");
-    }
+        RaycastHit2D hit = Physics2D.Raycast(feet.position, Vector2.right, feetMargin);
+        if (hit && moveDirection.x > 0f)
+            moveDirection.x = 0f;
 
-    private void OnEnable()
-    {
-        input.Enable();
-        input.Player.Move.performed += OnMovementPerformed;
-        input.Player.Move.canceled += OnMovementCanceled;
-    }
+        hit = Physics2D.Raycast(feet.position, Vector2.left, feetMargin);
+        if (hit && moveDirection.x < 0f)
+            moveDirection.x = 0f;
 
-    private void OnDisable()
-    {
-        input.Disable();
-        input.Player.Move.performed -= OnMovementPerformed;
-        input.Player.Move.canceled -= OnMovementCanceled;
-    }
+        hit = Physics2D.Raycast(feet.position, Vector2.down, feetMargin);
+        if (hit && moveDirection.y < 0f)
+            moveDirection.y = 0f;
 
-    private void OnMovementPerformed(InputAction.CallbackContext value)
-    {
-        moveVector = value.ReadValue<Vector2>();
-    }
+        hit = Physics2D.Raycast(feet.position, Vector2.up, feetMargin);
+        if (hit && moveDirection.y > 0f)
+            moveDirection.y = 0f;
 
-    private void OnMovementCanceled(InputAction.CallbackContext value)
-    {
-        moveVector = Vector2.zero;
+        transform.position += new Vector3(moveDirection.x, moveDirection.y, 0f) * Time.deltaTime;
     }
 }
