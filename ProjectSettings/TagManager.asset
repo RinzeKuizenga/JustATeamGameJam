@@ -7,6 +7,7 @@ TagManager:
   - Activator
   - GoodActivator
   - PerfectActivator
+  - MissActivator
   layers:
   - Default
   - TransparentFX

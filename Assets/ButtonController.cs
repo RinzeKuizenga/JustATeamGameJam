@@ -7,7 +7,6 @@ public class ButtonController : MonoBehaviour
     public Sprite pressedImage;
 
     public KeyCode keytoPress;
-    public Animator shockAnim;
     void Start()
     {
         theSR = GetComponent<SpriteRenderer>();
@@ -19,7 +18,6 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(keytoPress))
         {
             theSR.sprite = pressedImage;
-            shockAnim.SetTrigger("Play");
         }
 
         if (Input.GetKeyUp(keytoPress))
