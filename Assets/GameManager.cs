@@ -5,51 +5,73 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public Slider plushieSlider;
     public int points;
     public int combo;
 
     public TextMeshProUGUI comboText;
-    public Animator winAnim;
+    public TextMeshProUGUI feedbackText;
 
-    public float sliderSpeed = 5f; 
+    public ParticleSystem[] perfectParticles;
+    public ParticleSystem[] goodParticles;
+    public ParticleSystem[] missParticles;
 
     void Start()
     {
         instance = this;
-
-        plushieSlider.value = 0;
+        plushieSlider.value = points;
         combo = 0;
-        points = 0;
     }
 
     void Update()
     {
         comboText.text = $"Combo: {combo}";
+    }
 
-        plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
+    public void PerfectHit(int lane)
+    {
+        Debug.Log("Perfect Hit!");
+        combo++;
+        points += 10;
+        plushieSlider.value = points;
+        ShowFeedback("Perfect!");
+        PlayParticles(perfectParticles, lane);
+        
+    }
 
-        // Check win condition
-        if (points >= 100)
+    public void GoodHit(int lane)
+    {
+        Debug.Log("Good Hit!");
+        combo++;
+        points += 5; // less than perfect
+        plushieSlider.value = points;
+        ShowFeedback("Good!");
+        PlayParticles(goodParticles, lane);
+    }
+
+    public void NoteMissed(int lane)
+    {
+        Debug.Log("Missed Note");
+        points -= 2;
+        plushieSlider.value = points;
+        combo = 0;
+        ShowFeedback("Miss!");
+        PlayParticles(missParticles, lane);
+    }
+
+    private void ShowFeedback(string message)
+    {
+        if (feedbackText != null)
         {
-            winAnim.SetTrigger("Win");
+            feedbackText.text = message;
         }
     }
 
-    public void NoteHit()
+    private void PlayParticles(ParticleSystem[] particleArray, int lane)
     {
-        Debug.Log("Hit on Time");
-
-        combo++;
-        points += 10;
-    }
-
-    public void NoteMissed()
-    {
-        Debug.Log("Missed Note");
-
-        points -= 2;
-        combo = 0;
+        if (lane < particleArray.Length && particleArray[lane] != null)
+        { 
+            particleArray[lane].Play();
+        }
     }
 }
