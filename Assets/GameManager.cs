@@ -82,6 +82,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EndSong()
+    {
+
+    }
+
     private void PlayParticles(ParticleSystem[] particleArray, int lane)
     {
         if (lane < particleArray.Length && particleArray[lane] != null)
