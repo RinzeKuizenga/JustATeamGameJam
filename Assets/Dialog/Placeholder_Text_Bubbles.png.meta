@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Placeholder_Text_Bubbles_0: 7172459728401073279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 82dbae70a8e50e44db97c9ac7699da83
+guid: f48c0561c1d29a14793970033fb95927
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2660968328804394481
-    second: Stairs_0
+      213: 5435936245034971430
+    second: garden_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stairs_0
+      name: garden_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 1920
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0a9c034767521bd0800000000000000
-      internalID: -2660968328804394481
+      spriteID: 621fafac633507b40800000000000000
+      internalID: 5435936245034971430
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Stairs_0: -2660968328804394481
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
