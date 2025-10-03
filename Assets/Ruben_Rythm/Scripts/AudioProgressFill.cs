@@ -11,6 +11,10 @@ public class AudioProgressFill : MonoBehaviour
     private bool hasClicked = false;
     private bool audioStarted = false;
 
+    private void Start()
+    {
+        progressImage.gameObject.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !hasClicked)
@@ -30,5 +34,6 @@ public class AudioProgressFill : MonoBehaviour
         yield return new WaitForSeconds(delay);
         audioSource.Play();
         audioStarted = true;
+        progressImage.gameObject.SetActive(true);
     }
 }
