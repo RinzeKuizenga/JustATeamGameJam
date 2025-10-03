@@ -8,7 +8,7 @@ public class NoteObject : MonoBehaviour
     public int lane;
 
     private bool scored = false;
-    private string currentHitType = ""; // "Perfect" or "Good"
+    private string currentHitType = ""; 
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class NoteObject : MonoBehaviour
                 GameManager.instance.GoodHit(lane);
             }
 
-            gameObject.SetActive(false); // prevent exit from triggering after hit
+            gameObject.SetActive(false); 
         }
     }
 
@@ -45,13 +45,13 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // only miss if the note was never hit
-        if (!scored && (other.CompareTag("PerfectActivator") || other.CompareTag("GoodActivator")))
+        if (!scored && other.CompareTag("MissActivator"))
         {
             canBePressed = false;
-            scored = true; // prevent multiple calls
+            scored = true;
             GameManager.instance.NoteMissed(lane);
             gameObject.SetActive(false);
         }
     }
+
 }
