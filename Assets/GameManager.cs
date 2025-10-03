@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         points += 10;                // Increase target
         ShowFeedback(perfect);
         PlayParticles(perfectParticles, lane);
+        Audio_Script.instance.PlayHitStreak();
     }
 
     public void GoodHit(int lane)
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
         points += 5;                 // Increase target
         ShowFeedback(good);
         PlayParticles(goodParticles, lane);
+        Audio_Script.instance.PlayHitStreak();
     }
 
     public void NoteMissed(int lane)
@@ -72,6 +74,8 @@ public class GameManager : MonoBehaviour
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
+
+        Audio_Script.instance.PlayMiss();
     }
 
     private void ShowFeedback(Sprite feedback)
