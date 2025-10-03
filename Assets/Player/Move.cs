@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -8,9 +9,34 @@ public class Move : MonoBehaviour
     public Transform feet;
     public float feetMargin = 0.2f;
     private Vector2 moveDirection = Vector2.zero;
+    public List<Interactable> interactables=new List<Interactable>();
+    //can be changed to gameobjects too, just an extra step to convert them to transforms
+    public float distanceToInteract = 10;
+    // how far max to activate something
+
+    void LoadAnimation() 
+    { 
+        
+    }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            foreach (Interactable t in interactables)
+            {
+                if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
+                {
+                    //do something
+
+                    //animate with t.Animate()
+                }
+                else
+                {
+                    //unanimate with t.UnAnimate()
+                }
+            }
+        }
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
