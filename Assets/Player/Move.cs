@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,6 +20,22 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            foreach (Interactable t in interactables)
+            {
+                if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
+                {
+                    //do something
+
+                    //animate with t.Animate()
+                }
+                else
+                {
+                    //unanimate with t.UnAnimate()
+                }
+            }
+        }
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
