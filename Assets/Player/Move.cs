@@ -18,6 +18,9 @@ public class Move : MonoBehaviour
     public confirmBox confirmation;
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
 
+    public List<Interactable> interactables = new List<Interactable>();
+    public float distanceToInteract = 10;
+
     private void Start()
     {
         originalScale = transform.localScale;
