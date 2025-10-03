@@ -12,6 +12,8 @@ public class Move : MonoBehaviour
     public bool canMove = true;
     private Vector2 moveDirection = Vector2.zero;
     private Vector3 originalScale = Vector3.zero;
+    public List<Interactable> interactables = new List<Interactable>();
+    public float distanceToInteract = 10;
 
     private void Start()
     {
