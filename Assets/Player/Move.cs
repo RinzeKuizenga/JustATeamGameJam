@@ -13,7 +13,7 @@ public class Move : MonoBehaviour
     //can be changed to gameobjects too, just an extra step to convert them to transforms
     public float distanceToInteract = 10;
     // how far max to activate something
-    public GameObject confirmation;
+    public confirmBox confirmation;
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
 
     void LoadAnimation() 
@@ -23,7 +23,7 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
-        confirmation.SetActive(false);
+        confirmation.gameObject.SetActive(false);
     }
 
     void Update()
@@ -43,7 +43,8 @@ public class Move : MonoBehaviour
                     }
                     else if (t.sceneToLoad != null)
                     {
-                        confirmation.SetActive(true);
+                        confirmation.gameObject.SetActive(true);
+                        confirmation.sceneToLoad=t.sceneToLoad;
                     }
                     //animate with t.Animate()
                 }
@@ -67,7 +68,7 @@ public class Move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)) 
         { 
-            confirmation.SetActive(false);
+            confirmation.gameObject.SetActive(false);
             EToInteract.SetActive(false) ;
             foreach (Interactable t in interactables)
             {

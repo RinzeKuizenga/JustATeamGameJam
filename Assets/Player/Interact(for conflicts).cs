@@ -38,17 +38,31 @@ public class Interact : MonoBehaviour
                     }
                     else if (t.sceneToLoad != null)
                     {
-                        confirmation.SetActive(true);
+                        confirmation.gameObject.SetActive(true);
+                        confirmation.sceneToLoad=t.sceneToLoad;
                     }
                     //animate with t.Animate()
                 }
-            }
+    }
             if (t.gameObject.activeInHierarchy)
             {
                 e = true;
             }
         }
         EToInteract.SetActive(e);
-        */
+
+if (Input.GetKeyDown(KeyCode.Escape))
+{
+    confirmation.gameObject.SetActive(false);
+    EToInteract.SetActive(false);
+    foreach (Interactable t in interactables)
+    {
+        if (t.prefabToLoad != null)
+        {
+            t.prefabToLoad.SetActive(false);
+        }
+    }
+}
+*/
     }
 }
