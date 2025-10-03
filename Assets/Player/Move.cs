@@ -28,6 +28,7 @@ public class Move : MonoBehaviour
                 if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
                 {
                     //do something
+
                     //animate with t.Animate()
                 }
                 else

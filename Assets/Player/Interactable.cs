@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class Interactable : MonoBehaviour
 {
     public Animator animator;
-    // public Scene sceneToLoad / GameObject prefabToLoad;
+    public Scene sceneToLoad;
+    public GameObject prefabToLoad;
 
     public void Animate(string paramName)
     // paramName : parameter of the animator to animate
