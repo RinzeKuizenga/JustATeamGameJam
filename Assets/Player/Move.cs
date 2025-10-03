@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Move : MonoBehaviour
@@ -7,6 +8,7 @@ public class Move : MonoBehaviour
     public Animator animator;
     public Transform feet;
     public float feetMargin = 0.2f;
+    public bool canMove = true;
     private Vector2 moveDirection = Vector2.zero;
     private Vector3 originalScale = Vector3.zero;
 
@@ -39,6 +41,9 @@ public class Move : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!canMove)
+            return;
+
         RaycastHit2D hit = Physics2D.Raycast(feet.position, Vector2.right, feetMargin);
         if (hit && moveDirection.x > 0f)
             moveDirection.x = 0f;
