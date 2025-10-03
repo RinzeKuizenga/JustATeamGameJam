@@ -1,10 +1,10 @@
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
     public Animator animator;
-    public Scene sceneToLoad;
+    public SceneAsset sceneToLoad;
     public GameObject prefabToLoad;
 
     public void Animate(string paramName)
@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
 
     public void Update()
     {
-        
+        //
     }
 
     public void Start()
