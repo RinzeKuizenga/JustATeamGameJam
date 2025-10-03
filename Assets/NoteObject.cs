@@ -5,6 +5,8 @@ public class NoteObject : MonoBehaviour
     public bool canBePressed;
     public KeyCode keyToPress;
 
+    public int lane;
+
     private bool scored = false;
     private string currentHitType = ""; // "Perfect" or "Good"
 
@@ -16,11 +18,11 @@ public class NoteObject : MonoBehaviour
 
             if (currentHitType == "Perfect")
             {
-                GameManager.instance.PerfectHit();
+                GameManager.instance.PerfectHit(lane);
             }
             else if (currentHitType == "Good")
             {
-                GameManager.instance.GoodHit();
+                GameManager.instance.GoodHit(lane);
             }
 
             gameObject.SetActive(false); // prevent exit from triggering after hit
@@ -48,7 +50,7 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = false;
             scored = true; // prevent multiple calls
-            GameManager.instance.NoteMissed();
+            GameManager.instance.NoteMissed(lane);
             gameObject.SetActive(false);
         }
     }

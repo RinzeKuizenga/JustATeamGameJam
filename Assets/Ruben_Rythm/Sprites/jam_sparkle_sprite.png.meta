@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: a963de263e57f1f4185a852772d5401d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6666056407308844821
+    second: jam_sparkle_sprite_0
+  - first:
+      213: 4489971651895011969
+    second: jam_sparkle_sprite_1
+  - first:
+      213: 7034624735873878968
+    second: jam_sparkle_sprite_2
+  - first:
+      213: -3968199418565154052
+    second: jam_sparkle_sprite_3
+  - first:
+      213: 7903944446156794470
+    second: jam_sparkle_sprite_4
+  - first:
+      213: 796780927348350872
+    second: jam_sparkle_sprite_5
+  - first:
+      213: 5656987816476599833
+    second: jam_sparkle_sprite_6
+  - first:
+      213: -8808669062593829379
+    second: jam_sparkle_sprite_7
+  - first:
+      213: -459833499866337361
+    second: jam_sparkle_sprite_8
+  - first:
+      213: -5304300619656181544
+    second: jam_sparkle_sprite_9
+  - first:
+      213: -2023576343726634445
+    second: jam_sparkle_sprite_10
+  - first:
+      213: 3416545234442450107
+    second: jam_sparkle_sprite_11
+  - first:
+      213: -3567361888915446988
+    second: jam_sparkle_sprite_12
+  - first:
+      213: 2022737696303422862
+    second: jam_sparkle_sprite_13
+  - first:
+      213: -1966744680686474012
+    second: jam_sparkle_sprite_14
+  - first:
+      213: -8373682841263943090
+    second: jam_sparkle_sprite_15
+  - first:
+      213: -8493455635320645546
+    second: jam_sparkle_sprite_16
+  - first:
+      213: 4951047826478643546
+    second: jam_sparkle_sprite_17
+  - first:
+      213: 5894483064547313922
+    second: jam_sparkle_sprite_18
+  - first:
+      213: -8165732267764923777
+    second: jam_sparkle_sprite_19
+  - first:
+      213: -7297753333298575346
+    second: jam_sparkle_sprite_20
+  - first:
+      213: -6700368903317735547
+    second: jam_sparkle_sprite_21
+  - first:
+      213: 4000397726911997059
+    second: jam_sparkle_sprite_22
+  - first:
+      213: -7466116042733618720
+    second: jam_sparkle_sprite_23
+  - first:
+      213: -2795974671176204782
+    second: jam_sparkle_sprite_24
+  - first:
+      213: -8559230059567306906
+    second: jam_sparkle_sprite_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 530
+        width: 361
+        height: 672
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f3c52fbf6928c50800000000000000
+      internalID: 6666056407308844821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 814
+        width: 446
+        height: 401
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18aa6c2bd659f4e30800000000000000
+      internalID: 4489971651895011969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 848
+        width: 317
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb40fd1de100a160800000000000000
+      internalID: 7034624735873878968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 999
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa238a37af1ee8c0800000000000000
+      internalID: -3968199418565154052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 876
+        width: 140
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ae89dc89370bd60800000000000000
+      internalID: 7903944446156794470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 626
+        width: 94
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f976a280cbe0b00800000000000000
+      internalID: 796780927348350872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 632
+        width: 103
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916ecc37278a18e40800000000000000
+      internalID: 5656987816476599833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 625
+        width: 95
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df52f1c682251c580800000000000000
+      internalID: -8808669062593829379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 5
+        width: 497
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a4a486900dae3e0800000000000000
+      internalID: -2023576343726634445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 358
+        width: 56
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4fef10ac10a6f20800000000000000
+      internalID: 3416545234442450107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 359
+        width: 82
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433ade1434f2e7ec0800000000000000
+      internalID: -3567361888915446988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 355
+        width: 77
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d15f5c735321c10800000000000000
+      internalID: 2022737696303422862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 177
+        width: 128
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6585c25991f212a80800000000000000
+      internalID: -8493455635320645546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jam_sparkle_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 107
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5873ca58bf18303a0800000000000000
+      internalID: -6700368903317735547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a74eb32d64aebce4fa7096bd47dfd1e6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jam_sparkle_sprite_0: 6666056407308844821
+      jam_sparkle_sprite_1: 4489971651895011969
+      jam_sparkle_sprite_10: -2023576343726634445
+      jam_sparkle_sprite_11: 3416545234442450107
+      jam_sparkle_sprite_12: -3567361888915446988
+      jam_sparkle_sprite_13: 2022737696303422862
+      jam_sparkle_sprite_16: -8493455635320645546
+      jam_sparkle_sprite_2: 7034624735873878968
+      jam_sparkle_sprite_21: -6700368903317735547
+      jam_sparkle_sprite_3: -3968199418565154052
+      jam_sparkle_sprite_4: 7903944446156794470
+      jam_sparkle_sprite_5: 796780927348350872
+      jam_sparkle_sprite_6: 5656987816476599833
+      jam_sparkle_sprite_7: -8808669062593829379
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
