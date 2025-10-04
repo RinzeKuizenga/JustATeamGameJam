@@ -300,7 +300,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -6.7489824, y: 0.55267906}
+  m_Offset: {x: -6.7489824, y: 0.6213591}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -310,7 +310,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.167082, y: 5.3331537}
+  m_Size: {x: 11.167082, y: 5.1957936}
   m_EdgeRadius: 0
 --- !u!1 &2893192931601098623
 GameObject:
@@ -405,7 +405,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRoom: {fileID: 5001416808053643900, guid: 0ec13f9c1b4b88e448e8d214d816af87, type: 3}
   oldRoom: {fileID: 6757259767425573568}
+  unlocked: 1
+  soundName: Door
   spawnName: SpawnStairs
+  roomType: Carpet
 --- !u!1 &4951052281156341879
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +533,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRoom: {fileID: 1007421302066799270, guid: f9bda8876a8263b46bb182c5eb2bee30, type: 3}
   oldRoom: {fileID: 6757259767425573568}
+  unlocked: 1
+  soundName: Door
   spawnName: Spawn
+  roomType: Carpet
 --- !u!1 &5451413283372247401
 GameObject:
   m_ObjectHideFlags: 0
