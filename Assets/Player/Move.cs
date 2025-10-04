@@ -23,7 +23,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canMove)
         {
             foreach (Interactable t in interactables)
             {
