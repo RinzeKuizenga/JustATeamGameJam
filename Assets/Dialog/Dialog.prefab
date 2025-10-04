@@ -91,8 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 117677567661473081}
-  talkSpeed: 4
+  talkSpeed: 60
   file: {fileID: 4900000, guid: a5410d01932c5a84ba7e816103214ea3, type: 3}
+  playerMoveComponent: {fileID: 0}
+  sentences: []
   finished: 0
 --- !u!1 &5387789118938921226
 GameObject:
@@ -251,4 +253,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What the hell is going on around me?
+  m_Text: ...

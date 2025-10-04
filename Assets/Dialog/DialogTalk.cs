@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class DialogTalk : MonoBehaviour
 {
     public Text text;
-    public int talkSpeed = 1;
+    public int tickDelay = 1;
     public TextAsset file;
-    private List<string> sentences;
+    public Move playerMoveComponent;
+    public List<string> sentences;
 
     private int textIndex = 0;
     private string currentText = string.Empty;
@@ -16,7 +17,7 @@ public class DialogTalk : MonoBehaviour
     private string lastSentence = string.Empty;
     public bool finished = false;
 
-    private long lastUpdateTime;
+    private int ticks = 0;
 
     private void ResetVars()
     {
@@ -33,8 +34,10 @@ public class DialogTalk : MonoBehaviour
         var content = file.text;
         var all = content.Split("\n");
         sentences = new List<string>(all);
-        talkSpeed *= 100000; // Sorry magic fix
         ResetVars();
+
+        if (playerMoveComponent)
+            playerMoveComponent.canMove = false;
     }
 
     private string GetSentence()
@@ -44,15 +47,20 @@ public class DialogTalk : MonoBehaviour
         if (sentenceIndex >= sentences.Count)
         {
             finished = true;
+
+            if (playerMoveComponent)
+                playerMoveComponent.canMove = true;
+
             return null;
         }
 
         string current = sentences[sentenceIndex];
-        if (textIndex < current.Length && currentTime - lastUpdateTime > talkSpeed)
+        if (textIndex < current.Length && ticks > tickDelay)
         {
-            lastUpdateTime = currentTime;
             currentText += current[textIndex];
             textIndex++;
+            Debug.Log(ticks);
+            ticks = 0;
         }
 
         return currentText;
@@ -63,7 +71,6 @@ public class DialogTalk : MonoBehaviour
         sentenceIndex++;
         textIndex = 0;
         currentText = string.Empty;
-        lastUpdateTime = 0;
     }
 
     public void Talk()
@@ -83,11 +90,15 @@ public class DialogTalk : MonoBehaviour
     void Update()
     {
         if (finished)
-            Destroy(this);
+            Destroy(gameObject);
 
         if (Input.GetMouseButtonDown(0))
             NextSentence();
+    }
 
+    private void FixedUpdate()
+    {
         Talk();
+        ticks++;
     }
 }
