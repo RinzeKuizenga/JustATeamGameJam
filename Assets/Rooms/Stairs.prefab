@@ -528,9 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db04beb8e1077a428489135574ac732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newRoom: {fileID: 5001416808053643900, guid: 0ec13f9c1b4b88e448e8d214d816af87, type: 3}
+  newRoom: {fileID: 1007421302066799270, guid: f9bda8876a8263b46bb182c5eb2bee30, type: 3}
   oldRoom: {fileID: 6757259767425573568}
-  spawnName: SpawnStairs
+  spawnName: Spawn
 --- !u!1 &5451413283372247401
 GameObject:
   m_ObjectHideFlags: 0
