@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Move : MonoBehaviour
@@ -19,16 +17,9 @@ public class Move : MonoBehaviour
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
     private Vector3 originalScale = Vector3.zero;
 
-    public List<Interactable> interactables = new List<Interactable>();
-    public float distanceToInteract = 10;
-
     private void Start()
     {
         originalScale = transform.localScale;
-    }
-
-    private void Start()
-    {
         confirmation.gameObject.SetActive(false);
     }
 

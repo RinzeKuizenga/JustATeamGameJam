@@ -139,6 +139,11 @@ MonoBehaviour:
   animator: {fileID: 3762565275230230665}
   feet: {fileID: 431232842843918042}
   feetMargin: 0.2
+  canMove: 1
+  interactables: []
+  distanceToInteract: 10
+  confirmation: {fileID: 0}
+  EToInteract: {fileID: 0}
 --- !u!95 &3762565275230230665
 Animator:
   serializedVersion: 7
