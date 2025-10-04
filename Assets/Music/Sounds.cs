@@ -59,7 +59,6 @@ public class Sounds : MonoBehaviour
         }
 
         Foot.clip = clip;
-        Foot.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,8 +69,9 @@ public class Sounds : MonoBehaviour
         Music = temp.AddComponent<AudioSource>();
         Music.loop = true;
         Foot = temp2.AddComponent<AudioSource>();
+        Foot.playOnAwake = false;
         Foot.loop = true;
-        ChangeMusic("Background");
+        ChangeMusic("Noise");
         ChangeFoot("FootCarpet");
     }
 
