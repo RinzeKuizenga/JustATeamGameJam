@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: 53ed3c273a0a9fb449391f7a64416163
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2241136444217151290
+    second: sheetmusicpaper_0
+  - first:
+      213: -3758172358696578100
+    second: sheetmusicpaper_1
+  - first:
+      213: 8962598303947821858
+    second: sheetmusicpaper_2
+  - first:
+      213: 3913854770095220011
+    second: sheetmusicpaper_3
+  - first:
+      213: -102266208809956639
+    second: sheetmusicpaper_4
+  - first:
+      213: -6128746748725145274
+    second: sheetmusicpaper_5
+  - first:
+      213: 4809847908716011670
+    second: sheetmusicpaper_6
+  - first:
+      213: -6753189895752508260
+    second: sheetmusicpaper_7
+  - first:
+      213: 9046911292202773825
+    second: sheetmusicpaper_8
+  - first:
+      213: -3692313688465640980
+    second: sheetmusicpaper_9
+  - first:
+      213: 998046677950821117
+    second: sheetmusicpaper_10
+  - first:
+      213: -6138675310920609955
+    second: sheetmusicpaper_11
+  - first:
+      213: 1149690558431861024
+    second: sheetmusicpaper_12
+  - first:
+      213: 6224476145154415712
+    second: sheetmusicpaper_13
+  - first:
+      213: -3864061491405527173
+    second: sheetmusicpaper_14
+  - first:
+      213: -2425838510012251649
+    second: sheetmusicpaper_15
+  - first:
+      213: 8860695590972639632
+    second: sheetmusicpaper_16
+  - first:
+      213: 1119352726638369473
+    second: sheetmusicpaper_17
+  - first:
+      213: -5421514513297657540
+    second: sheetmusicpaper_18
+  - first:
+      213: 3163155032501322707
+    second: sheetmusicpaper_19
+  - first:
+      213: 7264009790548143315
+    second: sheetmusicpaper_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sheetmusicpaper_0
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 1494
+        width: 120
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fceb2d8bd1a1f10800000000000000
+      internalID: 2241136444217151290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1137
+        width: 1725
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc3d233c62a48dbc0800000000000000
+      internalID: -3758172358696578100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_2
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 1180
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223145bebab816c70800000000000000
+      internalID: 8962598303947821858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_3
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 1156
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b256ef94d2ec05630800000000000000
+      internalID: 3913854770095220011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_4
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 798
+        width: 1737
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ea4b57cc6da49ef0800000000000000
+      internalID: -102266208809956639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_5
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 797
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64158e3bd4152faa0800000000000000
+      internalID: -6128746748725145274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_6
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 549
+        width: 1589
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6906ca6703300c240800000000000000
+      internalID: 4809847908716011670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 317
+        width: 1589
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5fcd1d245b0fcaa0800000000000000
+      internalID: -6138675310920609955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sheetmusicpaper_16
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 85
+        width: 1589
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0994bcaa1b387fa70800000000000000
+      internalID: 8860695590972639632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 01afa016604ed0d48a25053966c64c06
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sheetmusicpaper_0: 2241136444217151290
+      sheetmusicpaper_1: -3758172358696578100
+      sheetmusicpaper_10: 998046677950821117
+      sheetmusicpaper_11: -6138675310920609955
+      sheetmusicpaper_12: 1149690558431861024
+      sheetmusicpaper_13: 6224476145154415712
+      sheetmusicpaper_14: -3864061491405527173
+      sheetmusicpaper_15: -2425838510012251649
+      sheetmusicpaper_16: 8860695590972639632
+      sheetmusicpaper_17: 1119352726638369473
+      sheetmusicpaper_18: -5421514513297657540
+      sheetmusicpaper_19: 3163155032501322707
+      sheetmusicpaper_2: 8962598303947821858
+      sheetmusicpaper_20: 7264009790548143315
+      sheetmusicpaper_3: 3913854770095220011
+      sheetmusicpaper_4: -102266208809956639
+      sheetmusicpaper_5: -6128746748725145274
+      sheetmusicpaper_6: 4809847908716011670
+      sheetmusicpaper_7: -6753189895752508260
+      sheetmusicpaper_8: 9046911292202773825
+      sheetmusicpaper_9: -3692313688465640980
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
