@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class Sounds : MonoBehaviour
 {
-    public static float NoiseEffects = 1f;
-    public static float MusicEffects = 1f;
-    public static AudioSource Music;
-    public static void PlayClip(string path)
+    public static float NoiseEffects = 1f; 
+ // Change this to make noises louder/quieter
+    public static float MusicEffects = 1f; 
+ // Change this to make music  louder/quieter
+    public static AudioSource Music; 
+ // A looping music
+
+    public static void PlayClip(string path) 
+ // Plays a sound ONCE then destroys it
     {
         AudioClip clip = Resources.Load<AudioClip>(path);
         if (clip == null)
@@ -29,7 +34,8 @@ public class Sounds : MonoBehaviour
         // Destroy after the clip finishes playing
         UnityEngine.Object.Destroy(tempGO, clip.length);
     }
-    public static void ChangeMusic(string path)
+    public static void ChangeMusic(string path) 
+ // Changes the music, and plays it (the music loops)
     {
         AudioClip clip = Resources.Load<AudioClip>(path);
         if (clip == null)
