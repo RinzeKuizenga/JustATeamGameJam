@@ -1,11 +1,34 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogTrigger : MonoBehaviour
 {
     public DialogTalk dialog;
     public Transform canvas;
-    public TextAsset textFile;
+    public string textFilePath;
+    public int id = 1;
     public bool fired = false;
+
+    public void Begin(Move move)
+    {
+        foreach (var currentId in move.seenDialogId)
+            if (currentId == id)
+                return;
+
+        if (canvas == null)
+        {
+            canvas = Array.Find<GameObject>(SceneManager.GetActiveScene().GetRootGameObjects(), s => s.name == "Canvas").transform;
+        }
+
+        var instance = Instantiate(dialog, canvas);
+        dialog.playerMoveComponent = move;
+
+        instance.filepath = textFilePath;
+        instance.Begin();
+        fired = true;
+        move.seenDialogId.Add(id);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,16 +38,10 @@ public class DialogTrigger : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        Instantiate(dialog, canvas);
-
         var move = other.GetComponent<Move>();
         if (!move)
             return;
 
-        dialog.playerMoveComponent = move;
-
-        dialog.file = textFile;
-        dialog.Begin();
-        fired = true;
+        Begin(move);
     }
 }

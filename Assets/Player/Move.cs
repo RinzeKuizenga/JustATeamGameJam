@@ -17,22 +17,29 @@ public class Move : MonoBehaviour
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
     private Vector3 originalScale = Vector3.zero;
 
+    public List<int> seenDialogId;
+
     private void Start()
     {
         originalScale = transform.localScale;
         confirmation.gameObject.SetActive(false);
+        seenDialogId = new List<int>();
     }
 
     void Update()
     {
-        bool e = false;
+        //bool e = false;
         foreach (Interactable t in interactables)
         {
+            if (t == null)
+                continue;
+
             if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                EToInteract.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && canMove)
                 {
-                    EToInteract.SetActive(true);
+                    EToInteract.SetActive(false);
                     //do something
                     if (t.prefabToLoad != null)
                     {
@@ -56,12 +63,16 @@ public class Move : MonoBehaviour
                 }
                 EToInteract.SetActive(e);*/
             }
-            if (t.gameObject.activeInHierarchy)
+            else
             {
-                e = true;
+                EToInteract.SetActive(false);
             }
+            //if (t.gameObject.activeInHierarchy)
+            //{
+            //    e = true;
+            //}
         }
-        EToInteract.SetActive(e);
+        //EToInteract.SetActive(e);
 
         if (Input.GetKeyDown(KeyCode.Escape)) 
         { 
@@ -72,10 +83,16 @@ public class Move : MonoBehaviour
                 if (t.prefabToLoad != null)
                 {
                     t.prefabToLoad.SetActive(false);
+                    var dt = t.prefabToLoad.GetComponent<DialogTrigger>();
+
+                    if (!dt)
+                        continue;
+
+                    dt.Begin(this);
                 }
             }
         }
-        EToInteract.SetActive(false);
+
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
@@ -85,6 +102,9 @@ public class Move : MonoBehaviour
             moveDirection += speed * Vector2.up;
         if (Input.GetKey(KeyCode.S))
             moveDirection += speed * Vector2.down;
+
+        if (!canMove)
+            moveDirection = Vector2.zero;
 
         if (moveDirection.x > 0)
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
