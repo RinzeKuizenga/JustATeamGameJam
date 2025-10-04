@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogTalk : MonoBehaviour
 {
     public Text text;
-    public int talkSpeed = 1;
-    public TextAsset file;
-    private List<string> sentences;
+    public Text nameBox;
+    public List<string> names;
+    public List<string> sentences;
+
+    public int tickDelay = 1;
+    public string filepath;
+    public Move playerMoveComponent;
 
     private int textIndex = 0;
     private string currentText = string.Empty;
@@ -16,25 +21,55 @@ public class DialogTalk : MonoBehaviour
     private string lastSentence = string.Empty;
     public bool finished = false;
 
-    private long lastUpdateTime;
+    private int ticks = 0;
 
     private void ResetVars()
     {
         textIndex = 0;
         textIndex = 0;
         currentText = string.Empty;
-        sentenceIndex = -1;
+        sentenceIndex = 0;
         lastSentence = string.Empty;
         finished = false;
     }
 
     public void Begin()
     {
-        var content = file.text;
-        var all = content.Split("\n");
-        sentences = new List<string>(all);
-        talkSpeed *= 100000; // Sorry magic fix
+        var content = File.ReadAllLines(filepath);
+
+        if (content == null)
+        {
+            Debug.LogWarning("TextAsset doesn't have any text!");
+            return;
+        }
+
+        names = new List<string>();
+        sentences = new List<string>();
+
+        int i = 0;
+        foreach (var line in content)
+        {
+            if (i == 0 || i % 2 == 0)
+                names.Add(line);
+            else
+                sentences.Add(line);
+            i++;
+        }
+
+        if (names.Count != sentences.Count)
+            Debug.LogWarning("Names count and sentences count aren't equal!");
+
+        if (names.Count == 0 || sentences.Count == 0)
+        {
+            Debug.LogWarning("Names or sentences with zero elements present.");
+            Debug.LogWarning($"{names.Count} names");
+            Debug.LogWarning($"{sentences.Count} sentences");
+        }
+
         ResetVars();
+
+        if (playerMoveComponent)
+            playerMoveComponent.canMove = false;
     }
 
     private string GetSentence()
@@ -44,15 +79,16 @@ public class DialogTalk : MonoBehaviour
         if (sentenceIndex >= sentences.Count)
         {
             finished = true;
+
             return null;
         }
 
         string current = sentences[sentenceIndex];
-        if (textIndex < current.Length && currentTime - lastUpdateTime > talkSpeed)
+        if (textIndex < current.Length && ticks > tickDelay)
         {
-            lastUpdateTime = currentTime;
             currentText += current[textIndex];
             textIndex++;
+            ticks = 0;
         }
 
         return currentText;
@@ -63,7 +99,6 @@ public class DialogTalk : MonoBehaviour
         sentenceIndex++;
         textIndex = 0;
         currentText = string.Empty;
-        lastUpdateTime = 0;
     }
 
     public void Talk()
@@ -77,17 +112,33 @@ public class DialogTalk : MonoBehaviour
 
         lastSentence = sentence;
         text.text = sentence;
+
+        if (sentenceIndex >= names.Count)
+            return;
+        nameBox.text = names[sentenceIndex];
     }
 
     // Update is called once per frame
     void Update()
     {
         if (finished)
-            Destroy(this);
+        {
+            if (playerMoveComponent)
+                playerMoveComponent.canMove = true;
+
+            sentences.Clear();
+            names.Clear();
+            Destroy(gameObject);
+        }
+
 
         if (Input.GetMouseButtonDown(0))
             NextSentence();
+    }
 
+    private void FixedUpdate()
+    {
         Talk();
+        ticks++;
     }
 }

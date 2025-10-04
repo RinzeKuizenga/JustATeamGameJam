@@ -261,8 +261,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65421987, y: 0.65421987, z: 0.65421987}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.65422, y: 1.65422, z: 1.65422}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5266993947286718455}
   - {fileID: 4882081097771512967}
@@ -396,7 +396,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -12.238737, y: -2.2077317}
+  m_Offset: {x: -12.238737, y: 8.992283}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -406,7 +406,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6536598, y: 11.469829}
+  m_Size: {x: 0.6536598, y: 33.86985}
   m_EdgeRadius: 0
 --- !u!1 &4275584140427051838
 GameObject:
@@ -558,9 +558,13 @@ EdgeCollider2D:
   - {x: 10.129618, y: -4.91625}
   - {x: 9.961915, y: -4.9531436}
   - {x: 9.4645, y: -4.84622}
-  - {x: 8.979348, y: -4.72692}
-  - {x: 8.520552, y: -4.4474444}
-  - {x: 7.7592363, y: -4.4660063}
+  - {x: 9.025837, y: -4.7827063}
+  - {x: 8.805742, y: -4.7048817}
+  - {x: 8.520552, y: -4.5497193}
+  - {x: 8.2613125, y: -4.3637314}
+  - {x: 8.128368, y: -4.2091784}
+  - {x: 8.000029, y: -3.69483}
+  - {x: 7.1260433, y: -3.6669362}
   - {x: 6.5871906, y: -4.529907}
   - {x: 5.6516743, y: -4.8158307}
   - {x: 4.7900877, y: -5.0195994}
@@ -780,4 +784,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRoom: {fileID: 1007421302066799270, guid: f9bda8876a8263b46bb182c5eb2bee30, type: 3}
   oldRoom: {fileID: 3220338975427903789}
+  unlocked: 1
+  soundName: Stairs
   spawnName: SpawnGarden
