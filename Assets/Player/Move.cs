@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Move : MonoBehaviour
@@ -8,6 +9,7 @@ public class Move : MonoBehaviour
     public Animator animator;
     public Transform feet;
     public float feetMargin = 0.2f;
+    public bool canMove = true;
     private Vector2 moveDirection = Vector2.zero;
     public List<Interactable> interactables=new List<Interactable>();
     //can be changed to gameobjects too, just an extra step to convert them to transforms
@@ -15,10 +17,11 @@ public class Move : MonoBehaviour
     // how far max to activate something
     public confirmBox confirmation;
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
+    private Vector3 originalScale = Vector3.zero;
 
-    void LoadAnimation() 
-    { 
-        
+    private void Start()
+    {
+        originalScale = transform.localScale;
     }
 
     private void Start()
@@ -90,9 +93,9 @@ public class Move : MonoBehaviour
             moveDirection += speed * Vector2.down;
 
         if (moveDirection.x > 0)
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
         else if (moveDirection.x < 0)
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
 
         if (moveDirection.magnitude > 0f)
             animator.SetBool("IsWalking", true);
@@ -101,6 +104,9 @@ public class Move : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!canMove)
+            return;
+
         RaycastHit2D hit = Physics2D.Raycast(feet.position, Vector2.right, feetMargin);
         if (hit && moveDirection.x > 0f)
             moveDirection.x = 0f;
