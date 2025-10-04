@@ -11,6 +11,12 @@ public class Move : MonoBehaviour
     public float feetMargin = 0.2f;
     public bool canMove = true;
     private Vector2 moveDirection = Vector2.zero;
+    public List<Interactable> interactables=new List<Interactable>();
+    //can be changed to gameobjects too, just an extra step to convert them to transforms
+    public float distanceToInteract = 10;
+    // how far max to activate something
+    public confirmBox confirmation;
+    public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
     private Vector3 originalScale = Vector3.zero;
 
     public List<Interactable> interactables = new List<Interactable>();
@@ -21,24 +27,64 @@ public class Move : MonoBehaviour
         originalScale = transform.localScale;
     }
 
+    private void Start()
+    {
+        confirmation.gameObject.SetActive(false);
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canMove)
+        bool e = false;
+        foreach (Interactable t in interactables)
         {
-            foreach (Interactable t in interactables)
+            if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
             {
-                if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
+                    EToInteract.SetActive(true);
                     //do something
-
+                    if (t.prefabToLoad != null)
+                    {
+                        t.prefabToLoad.SetActive(true);
+                    }
+                    else if (t.sceneToLoad != null)
+                    {
+                        confirmation.gameObject.SetActive(true);
+                        confirmation.sceneToLoad=t.sceneToLoad;
+                    }
                     //animate with t.Animate()
                 }
-                else
+                /*
+                bool e = false;
+                foreach (Interactable i in interactables) 
+                { 
+                    if (i.gameObject.activeInHierarchy) 
+                    {
+                        e = true;
+                    }
+                }
+                EToInteract.SetActive(e);*/
+            }
+            if (t.gameObject.activeInHierarchy)
+            {
+                e = true;
+            }
+        }
+        EToInteract.SetActive(e);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        { 
+            confirmation.gameObject.SetActive(false);
+            EToInteract.SetActive(false) ;
+            foreach (Interactable t in interactables)
+            {
+                if (t.prefabToLoad != null)
                 {
-                    //unanimate with t.UnAnimate()
+                    t.prefabToLoad.SetActive(false);
                 }
             }
         }
+        EToInteract.SetActive(false);
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
