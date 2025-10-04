@@ -17,6 +17,8 @@ public class Move : MonoBehaviour
     public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
     private Vector3 originalScale = Vector3.zero;
 
+    public bool playingWalkSound = false;
+
     /*
      * If it is stopped, put : "Sounds.Foot.Pause();"
      * If it moves, put : "Sounds.Foot.Play();"
@@ -117,9 +119,22 @@ public class Move : MonoBehaviour
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
 
         if (moveDirection.magnitude > 0f)
+        {
             animator.SetBool("IsWalking", true);
+
+            if (playingWalkSound)
+                return;
+
+            Sounds.Foot.Play();
+            playingWalkSound = true;
+        }
         else
+        {
             animator.SetBool("IsWalking", false);
+            Sounds.Foot.Pause();
+            playingWalkSound = false;
+        }
+
     }
     private void FixedUpdate()
     {
