@@ -1,8 +1,20 @@
-Where the hell am i?
-Am I dreaming?
-Am I not?
+Mom
+Text.
+Mom
+Dialog.
+Mom
 This is a suprisingly long line considering the past sentences.
+Mom
 I have to also test for word wrap and proper overflow...
+Mom
+More long dialog to test the dialog speed.
+Mom
+Something something something something something something something something yeah something...
+Dad
 ...
+Dad
 Mew.
+Dad
 ...
+Dad
+I don't know if I am a real character but I am a real git merge conflict candidate.

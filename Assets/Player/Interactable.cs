@@ -1,11 +1,13 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
     public Animator animator;
     public SceneAsset sceneToLoad;
     public GameObject prefabToLoad;
+    public bool movePrefabToCanvas = true;
 
     public void Animate(string paramName)
     // paramName : parameter of the animator to animate
@@ -19,13 +21,25 @@ public class Interactable : MonoBehaviour
         animator.SetBool(paramName, false);
     }
 
-    public void Update()
-    {
-        //
-    }
-
     public void Start()
     {
-        
+        var prefab = Instantiate(prefabToLoad);
+        // Self assign to player
+        foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            var move = go.GetComponentInChildren<Move>();
+            if (move)
+                move.interactables.Add(this);
+
+            if (!movePrefabToCanvas)
+                continue;
+
+            if (go.name != "Canvas")
+                continue;
+
+            prefab.transform.SetParent(go.transform, false);
+            prefab.SetActive(false);
+            prefabToLoad = prefab;
+        }
     }
 }
