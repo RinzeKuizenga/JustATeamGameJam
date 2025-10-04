@@ -30,11 +30,6 @@ public class Sounds : MonoBehaviour
         aSource.volume = NoiseEffects*10f;
         aSource.Play();
 
-        if (path == "PlayerFound")
-        {
-            aSource.volume = NoiseEffects / 2;
-            aSource.pitch = 1.7f;
-        }
         DontDestroyOnLoad(tempGO);
         // Destroy after the clip finishes playing
         UnityEngine.Object.Destroy(tempGO, clip.length);
@@ -63,19 +58,20 @@ public class Sounds : MonoBehaviour
             return;
         }
 
-        Music.clip = clip;
-        Music.Play();
+        Foot.clip = clip;
+        Foot.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         var temp = new GameObject("MusicAudio");
+        var temp2 = new GameObject("MusicAudio");
         Music = temp.AddComponent<AudioSource>();
         Music.loop = true;
-        Foot = temp.AddComponent<AudioSource>();
+        Foot = temp2.AddComponent<AudioSource>();
         Foot.loop = true;
-        ChangeMusic("Backgroundd");
+        ChangeMusic("Background");
         ChangeFoot("FootCarpet");
     }
 
