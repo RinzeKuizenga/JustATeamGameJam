@@ -105,14 +105,17 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed(int lane)
     {
-        if (!beatScroller.hasStarted) return;   // 👈 block early misses
+        // Prevent early misses during countdown
+        if (!beatScroller.hasStarted)
+            return;
 
         points -= 2;
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
 
-        Audio_Script.instance.PlayMiss();   // only fires after countdown
+        Audio_Script.instance.PlayMiss();
+        Debug.Log("Hit played");
     }
 
 
