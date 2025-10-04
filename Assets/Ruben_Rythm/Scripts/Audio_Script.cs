@@ -12,7 +12,7 @@ public class Audio_Script : MonoBehaviour
     public AudioSource hitStreak;
 
     [Header("References")]
-    int hitCombo = GameManager.instance.combo;
+    int hitCombo;
 
     private void Awake()
     {
@@ -34,7 +34,6 @@ public class Audio_Script : MonoBehaviour
     public void Update()
     {
         hitCombo = GameManager.instance.combo;
-        Debug.Log(hitCombo);
     }
 
     public void PlayHitStreak()
@@ -42,7 +41,6 @@ public class Audio_Script : MonoBehaviour
         if (hitCombo == 10)
         {
             hitStreak.Play();
-            Debug.Log("WHAAAAATTT");
         }
     }
 }
