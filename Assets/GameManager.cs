@@ -50,16 +50,12 @@ public class GameManager : MonoBehaviour
 
         plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
 
-        if (!BackgroundMusic.isPlaying)
+        if (BackgroundMusic.isPlaying == false && beatScroller.hasStarted)
         {
             if (points >= 100)
-            {
                 winAnim.SetTrigger("Win");
-            }
-            else if (points <= 100) 
-            {
+            else
                 loseAnim.SetTrigger("Lose");
-            }
         }
     }
 
@@ -109,13 +105,17 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed(int lane)
     {
+        if (!beatScroller.hasStarted) return;   // 👈 block early misses
+
         points -= 2;
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
 
-        Audio_Script.instance.PlayMiss();
+        Audio_Script.instance.PlayMiss();   // only fires after countdown
     }
+
+
 
     private void ShowFeedback(Sprite feedback)
     {
