@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 117677567661473081}
-  talkSpeed: 60
+  nameBox: {fileID: 6105155410319031946}
+  names: []
+  sentences: []
+  tickDelay: 1
   file: {fileID: 4900000, guid: a5410d01932c5a84ba7e816103214ea3, type: 3}
   playerMoveComponent: {fileID: 0}
-  sentences: []
   finished: 0
 --- !u!1 &5387789118938921226
 GameObject:

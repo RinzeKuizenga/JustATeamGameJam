@@ -1,15 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogTalk : MonoBehaviour
 {
     public Text text;
+    public Text nameBox;
+    public List<string> names;
+    public List<string> sentences;
+
     public int tickDelay = 1;
     public TextAsset file;
     public Move playerMoveComponent;
-    public List<string> sentences;
 
     private int textIndex = 0;
     private string currentText = string.Empty;
@@ -32,8 +36,38 @@ public class DialogTalk : MonoBehaviour
     public void Begin()
     {
         var content = file.text;
+
+        if (content == null)
+        {
+            Debug.LogWarning("TextAsset doesn't have any text!");
+            return;
+        }
+
         var all = content.Split("\n");
-        sentences = new List<string>(all);
+
+        names = new List<string>();
+        sentences = new List<string>();
+
+        int i = 0;
+        foreach (var line in all)
+        {
+            if (i == 0 || i % 2 == 0)
+                names.Add(line);
+            else
+                sentences.Add(line);
+            i++;
+        }
+
+        if (names.Count != sentences.Count)
+            Debug.LogWarning("Names count and sentences count aren't equal!");
+
+        if (names.Count == 0 || sentences.Count == 0)
+        {
+            Debug.LogWarning("Names or sentences with zero elements present.");
+            Debug.LogWarning($"{names.Count} names");
+            Debug.LogWarning($"{sentences.Count} sentences");
+        }
+
         ResetVars();
 
         if (playerMoveComponent)
@@ -59,7 +93,6 @@ public class DialogTalk : MonoBehaviour
         {
             currentText += current[textIndex];
             textIndex++;
-            Debug.Log(ticks);
             ticks = 0;
         }
 
@@ -84,6 +117,10 @@ public class DialogTalk : MonoBehaviour
 
         lastSentence = sentence;
         text.text = sentence;
+
+        if (sentenceIndex >= names.Count)
+            return;
+        nameBox.text = names[sentenceIndex];
     }
 
     // Update is called once per frame
