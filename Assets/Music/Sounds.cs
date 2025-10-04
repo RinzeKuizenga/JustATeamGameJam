@@ -83,5 +83,6 @@ public class Sounds : MonoBehaviour
     void Update()
     {
         Music.volume = MusicEffects; //Scales to 1/10th of the original music, to scale it to sound effects
+        Foot.volume = FootEffects; //Scales to 1/10th of the original music, to scale it to sound effects
     }
 }
