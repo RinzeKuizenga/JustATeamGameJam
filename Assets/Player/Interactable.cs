@@ -52,6 +52,9 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
+        if (!player)
+            return;
+
         if (Input.GetKeyDown(KeyCode.E) && player.canMove)
         {
             interactUI.SetActive(false);
