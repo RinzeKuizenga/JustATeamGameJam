@@ -30,11 +30,11 @@ public class SceneLoading : MonoBehaviour
         {
             go.SetActive(true);
 
-            //if (go.name == "Canvas")
-            //{
-            //    go.transform.Find("confirmBox").gameObject.SetActive(false);
-            //    go.transform.Find("EBox").gameObject.SetActive(false);
-            //}
+            if (go.name == "Canvas")
+            {
+                go.transform.Find("confirmBox").gameObject.SetActive(false);
+                go.transform.Find("EBox").gameObject.SetActive(false);
+            }
         }
             
         foreach (var go in SceneManager.GetSceneByName(sceneName).GetRootGameObjects())
