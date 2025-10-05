@@ -202,7 +202,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRoom: {fileID: 5001416808053643900, guid: 0ec13f9c1b4b88e448e8d214d816af87, type: 3}
   oldRoom: {fileID: 7129128917408209580}
+  unlocked: 1
+  unlockOnDialogId: 0
+  soundName: Door
   spawnName: SpawnBathroom
+  roomType: Wood
 --- !u!1 &6894673898108396919
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6389143966040536458}
   - component: {fileID: 2187004722399327720}
+  - component: {fileID: 3309935587132221204}
   m_Layer: 0
   m_Name: Bathroom
   m_TagString: Untagged
@@ -374,6 +379,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3309935587132221204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129128917408209580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53475b372e6368948984a9b139cf2d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnables:
+  - {fileID: 358372702883194635, guid: a64bdb3a8b62e8f46b506509d1e5f56a, type: 3}
 --- !u!1 &7768712028440571228
 GameObject:
   m_ObjectHideFlags: 0
