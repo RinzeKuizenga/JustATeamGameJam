@@ -59,6 +59,7 @@ public class Sounds : MonoBehaviour
         }
 
         Foot.clip = clip;
+        Foot.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
