@@ -12,12 +12,12 @@ public class DialogTrigger : MonoBehaviour
     public bool fired = false;
     public Spawner spawner;
     public string trigger;
+    public Animator animator;
 
     public GameObject endBox;
     public GameObject monster;
 
     private DialogTalk d;
-    bool endBoxAdded = false;
 
     public void Begin(Move move)
     {
@@ -30,12 +30,15 @@ public class DialogTrigger : MonoBehaviour
 
         move.seenDialogId.Add(id);
 
-        if (monster)
+        if (animator != null && trigger != string.Empty)
+            animator.SetTrigger(trigger);
+        else if (monster)
         {
             var animator = monster.GetComponent<Animator>();
             if (animator != null && trigger != string.Empty)
                 animator.SetTrigger(trigger);
         }
+
 
         if (canvas == null)
         {
@@ -49,6 +52,7 @@ public class DialogTrigger : MonoBehaviour
             Instantiate(monster, spawner.transform);
 
         instance.filepath = textFilePath;
+        instance.ending = endBox;
         instance.Begin();
         d = instance;
         fired = true;
@@ -72,22 +76,24 @@ public class DialogTrigger : MonoBehaviour
             spawner.Spawn();
     }
 
-    private void FixedUpdate()
-    {
-        if (!d)
-            return;
+    //private void FixedUpdate()
+    //{
+    //    if (!d)
+    //        return;
 
-        if (!d.finished)
-            return;
+    //    if (!d.finished)
+    //        return;
 
-        if (endBoxAdded)
-            return;
+    //    Debug.Log(d.finished);
 
-        if (endBox)
-        {
-            var e = Instantiate(endBox, canvas);
-            e.SetActive(true);
-            endBoxAdded = true;
-        }   
-    }
+    //    if (endBoxAdded)
+    //        return;
+
+    //    if (endBox)
+    //    {
+    //        var e = Instantiate(endBox, canvas);
+    //        e.SetActive(true);
+    //        endBoxAdded = true;
+    //    }   
+    //}
 }

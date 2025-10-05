@@ -15,8 +15,6 @@ public class Interactable : MonoBehaviour
 
     private GameObject uiPrefab;
 
-    public bool interacted = false;
-
     public void Animate(string paramName)
     // paramName : parameter of the animator to animate
     {
@@ -31,7 +29,7 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D c)
     {
-        if (!c.gameObject.CompareTag("Player") || interacted)
+        if (!c.gameObject.CompareTag("Player"))
             return;
 
         player = c.gameObject.GetComponent<Move>();
@@ -58,7 +56,7 @@ public class Interactable : MonoBehaviour
         if (!player)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) && player.canMove && !interacted)
+        if (Input.GetKeyDown(KeyCode.E) && player.canMove)
         {
             interactUI.SetActive(false);
 
@@ -76,8 +74,6 @@ public class Interactable : MonoBehaviour
 
             if (dialogId != 0)
                 player.seenDialogId.Add(dialogId);
-
-            interacted = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
