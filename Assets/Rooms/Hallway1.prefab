@@ -870,7 +870,7 @@ MonoBehaviour:
   newRoom: {fileID: 6757259767425573568, guid: 3a695aa757517004bb6563fab4eea2d1, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
-  soundName: DoorOpen
+  soundName: 
   spawnName: Spawn
   roomType: Carpet
 --- !u!1 &9135365701061117265
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db04beb8e1077a428489135574ac732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newRoom: {fileID: 1392435246104467822, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+  newRoom: {fileID: 1392435246104467822, guid: 112b03009a2839d49a820aca5779b52a, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
   soundName: DoorOpen
