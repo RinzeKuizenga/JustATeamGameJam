@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: speed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: confirmUI

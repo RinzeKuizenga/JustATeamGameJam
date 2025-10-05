@@ -7,6 +7,7 @@ public class Ending_Buttons : MonoBehaviour
     {
         //Turn ending option 1 active
         Debug.Log("Clicked option_01");
+        SetFalse();
     }
 
     //OnClick01 is on the button Option_02
@@ -14,5 +15,11 @@ public class Ending_Buttons : MonoBehaviour
     {
         //Turn ending optiom 2 active
         Debug.Log("Clicked option_02");
+        SetFalse();
+    }
+
+    private void SetFalse()
+    {
+        gameObject.SetActive(false);
     }
 }
