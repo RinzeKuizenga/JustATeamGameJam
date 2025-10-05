@@ -6,7 +6,7 @@ public class RoomTransition : MonoBehaviour
     public GameObject newRoom;
     public GameObject oldRoom;
     public bool unlocked = true;
-    public string soundName = "Door";
+    public string soundName = "DoorOpen";
     public string spawnName = "Spawn";
     public string roomType = "Carpet";
 
