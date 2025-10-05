@@ -1853,6 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  sceneName: Ruben_Temma
 --- !u!1001 &163333009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8071,6 +8072,7 @@ MonoBehaviour:
   pointWorth: 0.5
   pointWorthPerfect: 1
   pointWorthMiss: 2
+  sceneChanger: RubenTenna
 --- !u!4 &653721314
 Transform:
   m_ObjectHideFlags: 0

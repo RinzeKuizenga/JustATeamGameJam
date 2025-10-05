@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;   // <-- Needed for Coroutines
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     public float pointWorth;
     public float pointWorthPerfect;
     public float pointWorthMiss;
+    public string sceneChanger;
 
     void Start()
     {
@@ -58,9 +60,16 @@ public class GameManager : MonoBehaviour
         if (BackgroundMusic.isPlaying == false && beatScroller.hasStarted)
         {
             if (points >= 100)
+            {
+
                 winAnim.SetTrigger("Win");
+                SceneManager.UnloadScene(sceneChanger);
+                Debug.Log("Scene Unloaded!!!");
+            }
             else
+            {
                 loseAnim.SetTrigger("Lose");
+            }
         }
     }
 

@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 03b134ce058b671409976c2b5afb562c
+  - enabled: 1
+    path: Assets/Scenes/Ruben_Temma.unity
+    guid: 43b5d39e4d902354cbc7b7c6668a41df
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: be55d97a8e303164ebc27c414d9db4cd, type: 3}
   m_UseUCBPForAssetBundles: 0
