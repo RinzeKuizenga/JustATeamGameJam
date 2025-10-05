@@ -993,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 4879371937888034157}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9883614, y: -2.2612903, z: -0.73256534}
+  m_LocalPosition: {x: -2.9883614, y: -2.2612903, z: -2}
   m_LocalScale: {x: 1.1627908, y: 1.1627908, z: 1.1627908}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1753,6 +1753,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
+      propertyPath: trigger
+      value: Family
+      objectReference: {fileID: 0}
+    - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 3337628568782251136}
+    - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
       value: Assets/Dialog/Entries/Arrive1.txt
       objectReference: {fileID: 0}
@@ -1903,6 +1911,10 @@ PrefabInstance:
       value: 69.246
       objectReference: {fileID: 0}
     - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+      propertyPath: dialogId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
       propertyPath: prefabToLoad
       value: 
       objectReference: {fileID: 0}
@@ -1911,8 +1923,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6761164967045977113, guid: 2f74f40ecbb0dfb45a07f58eab2b49b0, type: 3}
     m_RemovedComponents:
-    - {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
     - {fileID: 1987992099884273685, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+    - {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
