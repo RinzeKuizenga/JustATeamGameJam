@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Ending_Buttons : MonoBehaviour
 {
+    public DialogTrigger end1;
+    public DialogTrigger end2;
     //OnClick01 is on the button Option_01
     public void OnClick01()
     {
         //Turn ending option 1 active
-        Debug.Log("Clicked option_01");
+        end1.gameObject.SetActive(true);   
         SetFalse();
     }
 
@@ -14,7 +16,7 @@ public class Ending_Buttons : MonoBehaviour
     public void OnClick02() 
     {
         //Turn ending optiom 2 active
-        Debug.Log("Clicked option_02");
+        end2.gameObject.SetActive(true);
         SetFalse();
     }
 

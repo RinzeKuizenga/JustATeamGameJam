@@ -14,6 +14,12 @@ public class DialogTrigger : MonoBehaviour
     public Animator animator;
     public string trigger;
 
+    public GameObject endBox;
+    public GameObject monster;
+
+    private DialogTalk d;
+    bool endBoxAdded = false;
+
     public void Begin(Move move)
     {
         if (move.seenDialogId.Contains(id))
@@ -36,8 +42,12 @@ public class DialogTrigger : MonoBehaviour
         var instance = Instantiate(dialog, canvas);
         dialog.playerMoveComponent = move;
 
+        if (monster)
+            Instantiate(monster, canvas);
+
         instance.filepath = textFilePath;
         instance.Begin();
+        d = instance;
         fired = true;
     }
 
@@ -57,5 +67,23 @@ public class DialogTrigger : MonoBehaviour
 
         if (spawner)
             spawner.Spawn();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!d)
+            return;
+
+        if (!d.finished)
+            return;
+
+        if (endBoxAdded)
+            return;
+
+        if (endBox)
+        {
+            Instantiate(endBox, canvas);
+            endBoxAdded = true;
+        }   
     }
 }
