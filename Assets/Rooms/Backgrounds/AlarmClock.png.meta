@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 97cb8d510d039d14b89e32998390c4f7
+guid: eb64138a44bfcbf438b7e14007341dc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6288179971597629913
-    second: Sofa_0
+      213: -4347677225189719674
+    second: AlarmClock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sofa_0
+      name: AlarmClock_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 168
-        width: 417
-        height: 212
+        x: 1800
+        y: 257
+        width: 75
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 726823dc1a5ebb8a0800000000000000
-      internalID: -6288179971597629913
+      spriteID: 681c2824992f9a3c0800000000000000
+      internalID: -4347677225189719674
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sofa_0: -6288179971597629913
+      AlarmClock_0: -4347677225189719674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
