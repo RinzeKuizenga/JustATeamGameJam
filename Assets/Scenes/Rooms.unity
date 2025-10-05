@@ -131,17 +131,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bedroom
       objectReference: {fileID: 0}
-    - target: {fileID: 3988914008447465340, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.70973
+    - target: {fileID: 1558870098354701035, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3988914008447465340, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.70973
+    - target: {fileID: 1558870098354701035, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.98707956
       objectReference: {fileID: 0}
-    - target: {fileID: 3988914008447465340, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.70973
+    - target: {fileID: 1558870098354701035, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9669811
       objectReference: {fileID: 0}
     - target: {fileID: 3988914008447465340, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,9 +183,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3988914008447465340, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
+    - target: {fileID: 7744311998187459817, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -9.196752
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744311998187459817, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: -4.575798
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744311998187459817, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: -8.40757
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744311998187459817, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: -6.9362783
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -200,10 +212,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 431232842843918042, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.238
+      objectReference: {fileID: 0}
+    - target: {fileID: 840476124290846966, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 840476124290846966, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.3831005
+      objectReference: {fileID: 0}
+    - target: {fileID: 840476124290846966, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.68797
+      objectReference: {fileID: 0}
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: confirmUI
       value: 
       objectReference: {fileID: 1583468627}
+    - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: feetMargin
+      value: 0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: interactUI
       value: 
@@ -234,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256896267541029003, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.34
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 4256896267541029003, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.79
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 4256896267541029003, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: m_LocalPosition.z
@@ -283,6 +315,22 @@ PrefabInstance:
     - target: {fileID: 5818581442824072751, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840605313125449646, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8805972532538434959, guid: 7b6c78dd759f6f74d94abfe92db33e3d, type: 3}
+    - target: {fileID: 6840605313125449646, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840605313125449646, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840605313125449646, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7169812
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
