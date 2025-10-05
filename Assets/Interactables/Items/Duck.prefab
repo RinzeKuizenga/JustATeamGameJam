@@ -103,8 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneToLoad: {fileID: 102900000, guid: 03b134ce058b671409976c2b5afb562c, type: 3}
+  sceneToLoad: {fileID: 102900000, guid: 3ef3e6271290d234c9523c71dc01dd10, type: 3}
   ui: {fileID: 0}
+  dialogId: 0
 --- !u!58 &6685837169082322575
 CircleCollider2D:
   m_ObjectHideFlags: 0

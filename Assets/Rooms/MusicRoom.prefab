@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneToLoad: {fileID: 102900000, guid: 03b134ce058b671409976c2b5afb562c, type: 3}
+  sceneToLoad: {fileID: 102900000, guid: 2364cce116707ef4ebed7267e1721d80, type: 3}
   ui: {fileID: 0}
   dialogId: 8
 --- !u!58 &5679642460523631118
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71cd20a9ab69b64f8a6b58f7a00451f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDialogId: 7
+  spawnDialogId: 6
 --- !u!1 &1392435246104467822
 GameObject:
   m_ObjectHideFlags: 0

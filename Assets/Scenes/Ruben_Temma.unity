@@ -8070,7 +8070,7 @@ MonoBehaviour:
   pointWorth: 0.5
   pointWorthPerfect: 1
   pointWorthMiss: 2
-  sceneChanger: RubenTenna
+  sceneChanger: Ruben_Temma
 --- !u!4 &653721314
 Transform:
   m_ObjectHideFlags: 0

@@ -993,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 4879371937888034157}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9883614, y: -2.2612903, z: -0.73256534}
+  m_LocalPosition: {x: -2.9883614, y: -2.2612903, z: -2}
   m_LocalScale: {x: 1.1627908, y: 1.1627908, z: 1.1627908}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   newRoom: {fileID: 1392435246104467822, guid: 577240ba75e7cb34ea86bdac4a5661c7, type: 3}
   oldRoom: {fileID: 1007421302066799270}
   unlocked: 0
-  unlockOnDialogId: 3
+  unlockOnDialogId: 6
   soundName: DoorOpen
   spawnName: Spawn
   roomType: Carpet
@@ -1570,8 +1570,8 @@ Transform:
   m_GameObject: {fileID: 7906983884188385563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.44, y: -0.64, z: 0.63000613}
-  m_LocalScale: {x: 0.31, y: 0.31, z: 0.31}
+  m_LocalPosition: {x: -6.1264, y: -0.51, z: 0.63000613}
+  m_LocalScale: {x: 0.5808618, y: 0.6436912, z: 0.31}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5667665570123992056}
@@ -1620,15 +1620,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 859866142a7eb334889bb8b84eaeeffd, type: 3}
+  m_Sprite: {fileID: 907795176406802005, guid: 1fa88a6e3a3da5345a541df607d373b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.55, y: 6.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8015308844488959143
@@ -1752,6 +1752,14 @@ PrefabInstance:
       propertyPath: id
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
+      propertyPath: trigger
+      value: Family
+      objectReference: {fileID: 0}
+    - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 3337628568782251136}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
       value: Assets/Dialog/Entries/Arrive1.txt
@@ -1903,6 +1911,10 @@ PrefabInstance:
       value: 69.246
       objectReference: {fileID: 0}
     - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+      propertyPath: dialogId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
       propertyPath: prefabToLoad
       value: 
       objectReference: {fileID: 0}
@@ -1911,8 +1923,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6761164967045977113, guid: 2f74f40ecbb0dfb45a07f58eab2b49b0, type: 3}
     m_RemovedComponents:
-    - {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
     - {fileID: 1987992099884273685, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+    - {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
