@@ -23,7 +23,9 @@ public class Interactable : MonoBehaviour
 
     public void Start()
     {
-        var prefab = Instantiate(prefabToLoad);
+        GameObject prefab = null;
+        if (prefabToLoad)
+            prefab = Instantiate(prefabToLoad);
         // Self assign to player
         foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
         {
@@ -31,10 +33,7 @@ public class Interactable : MonoBehaviour
             if (move)
                 move.interactables.Add(this);
 
-            if (!movePrefabToCanvas)
-                continue;
-
-            if (go.name != "Canvas")
+            if (!movePrefabToCanvas || go.name != "Canvas" || !prefab)
                 continue;
 
             prefab.transform.SetParent(go.transform, false);

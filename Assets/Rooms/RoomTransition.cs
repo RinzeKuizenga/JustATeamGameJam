@@ -5,7 +5,7 @@ public class RoomTransition : MonoBehaviour
 {
     public GameObject newRoom;
     public GameObject oldRoom;
-    public bool unlocked=true;
+    public bool unlocked = true;
     public string soundName = "Door";
     public string spawnName = "Spawn";
     public string roomType = "Carpet";
@@ -15,13 +15,19 @@ public class RoomTransition : MonoBehaviour
         if (collider.tag != "Player")
             return;
 
-        if (unlocked)
-        {
-            Destroy(oldRoom);
-            var room = Instantiate(newRoom);
-            Sounds.PlayClip(soundName);
-            Sounds.ChangeFoot("Foot"+roomType);
-            collider.transform.position = room.transform.Find(spawnName).position + Vector3.back;
-        }
+        if (!unlocked)
+            return;
+
+        Destroy(oldRoom);
+        var room = Instantiate(newRoom);
+
+        Sounds.PlayClip(soundName);
+        Sounds.ChangeFoot("Foot" + roomType);
+
+        collider.transform.position = room.transform.Find(spawnName).position + Vector3.back;
+        var comps = newRoom.GetComponentsInChildren<Spawnable>(true);
+
+        foreach (var comp in comps)
+            comp.CheckSpawn(collider.GetComponent<Move>());
     }
 }
