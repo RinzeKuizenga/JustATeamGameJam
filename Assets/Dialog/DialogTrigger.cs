@@ -11,7 +11,6 @@ public class DialogTrigger : MonoBehaviour
     public int onlyAfterId = 0;
     public bool fired = false;
     public Spawner spawner;
-    public Animator animator;
     public string trigger;
 
     public GameObject endBox;
@@ -31,12 +30,16 @@ public class DialogTrigger : MonoBehaviour
 
         move.seenDialogId.Add(id);
 
-        if (animator != null && trigger != string.Empty)
-            animator.SetTrigger(trigger);
+        if (monster)
+        {
+            var animator = monster.GetComponent<Animator>();
+            if (animator != null && trigger != string.Empty)
+                animator.SetTrigger(trigger);
+        }
 
         if (canvas == null)
         {
-            canvas = Array.Find<GameObject>(SceneManager.GetActiveScene().GetRootGameObjects(), s => s.name == "Canvas").transform;
+            canvas = Array.Find(SceneManager.GetActiveScene().GetRootGameObjects(), s => s.name == "Canvas").transform;
         }
 
         var instance = Instantiate(dialog, canvas);
@@ -82,8 +85,8 @@ public class DialogTrigger : MonoBehaviour
 
         if (endBox)
         {
-            Instantiate(endBox, canvas);
-            endBox.SetActive(true);
+            var e = Instantiate(endBox, canvas);
+            e.SetActive(true);
             endBoxAdded = true;
         }   
     }
