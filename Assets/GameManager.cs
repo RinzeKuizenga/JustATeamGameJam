@@ -1,0 +1,130 @@
+﻿using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;   // <-- Needed for Coroutines
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager instance;
+    public Slider plushieSlider;
+    public int points;
+    public int combo;
+
+    public TextMeshProUGUI comboText;
+    public TextMeshProUGUI countdownText;   // 👈 drag your TMP object here in inspector
+
+    public SpriteRenderer feedbackRenderer;
+    public Sprite perfect;
+    public Sprite good;
+    public Sprite miss;
+
+    public ParticleSystem[] perfectParticles;
+    public ParticleSystem[] goodParticles;
+    public ParticleSystem[] missParticles;
+
+    public Animator winAnim;
+    public Animator loseAnim;
+
+    public float sliderSpeed = 5f;
+    public AudioSource BackgroundMusic;
+
+    [Header("BeatScroller Reference")]
+    public BeatScroller beatScroller;      // 👈 assign in inspector
+
+    void Start()
+    {
+        instance = this;
+        plushieSlider.value = 0;
+        combo = 0;
+        points = 0;
+        feedbackRenderer.sprite = null;
+        BackgroundMusic.volume = 0f;
+
+        // Start countdown when scene loads
+        StartCoroutine(StartCountdown());
+    }
+
+    void Update()
+    {
+        comboText.text = $"Combo {combo}";
+
+        plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
+
+        if (!BackgroundMusic.isPlaying)
+        {
+            if (points >= 100)
+            {
+                winAnim.SetTrigger("Win");
+            }
+            else if (points <= 100) 
+            {
+                loseAnim.SetTrigger("Lose");
+            }
+        }
+    }
+
+    IEnumerator StartCountdown()
+    {
+        // disable scrolling until countdown done
+        beatScroller.hasStarted = false;
+
+        countdownText.gameObject.SetActive(true);
+
+        // 3..2..1..
+        for (int i = 3; i > 0; i--)
+        {
+            countdownText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        // GO!
+        countdownText.text = "GO!";
+        yield return new WaitForSeconds(0.5f);
+
+        countdownText.gameObject.SetActive(false);
+
+        // Now start the music and movement
+        BackgroundMusic.volume = 1f;
+        BackgroundMusic.Play();
+        beatScroller.hasStarted = true;
+    }
+
+    public void PerfectHit(int lane)
+    {
+        combo++;
+        points += 10;
+        ShowFeedback(perfect);
+        PlayParticles(perfectParticles, lane);
+    }
+
+    public void GoodHit(int lane)
+    {
+        combo++;
+        points += 5;
+        ShowFeedback(good);
+        PlayParticles(goodParticles, lane);
+    }
+
+    public void NoteMissed(int lane)
+    {
+        points -= 2;
+        combo = 0;
+        ShowFeedback(miss);
+        PlayParticles(missParticles, lane);
+    }
+
+    private void ShowFeedback(Sprite feedback)
+    {
+        if (feedbackRenderer != null)
+            feedbackRenderer.sprite = feedback;
+    }
+
+    private void PlayParticles(ParticleSystem[] particleArray, int lane)
+    {
+        if (lane < particleArray.Length && particleArray[lane] != null)
+        {
+            particleArray[lane].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            particleArray[lane].Play();
+        }
+    }
+}

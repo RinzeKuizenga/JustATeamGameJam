@@ -9,73 +9,92 @@ public class Move : MonoBehaviour
     public float feetMargin = 0.2f;
     public bool canMove = true;
     private Vector2 moveDirection = Vector2.zero;
-    public List<Interactable> interactables=new List<Interactable>();
-    //can be changed to gameobjects too, just an extra step to convert them to transforms
-    public float distanceToInteract = 10;
-    // how far max to activate something
-    public confirmBox confirmation;
-    public GameObject EToInteract; //Place EBox in this; EBox MUST be in a canva to work
+    //public List<Interactable> interactables=new List<Interactable>();
+    ////can be changed to gameobjects too, just an extra step to convert them to transforms
+    //public float distanceToInteract = 10;
+    public confirmBox confirmUI;
+    public GameObject interactUI;
+
     private Vector3 originalScale = Vector3.zero;
+
+    public bool playingWalkSound = false;
+
+    public List<int> seenDialogId;
 
     private void Start()
     {
         originalScale = transform.localScale;
-        confirmation.gameObject.SetActive(false);
+        //confirmation.gameObject.SetActive(false);
+        seenDialogId = new List<int>();
     }
 
     void Update()
     {
-        bool e = false;
-        foreach (Interactable t in interactables)
-        {
-            if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    EToInteract.SetActive(true);
-                    //do something
-                    if (t.prefabToLoad != null)
-                    {
-                        t.prefabToLoad.SetActive(true);
-                    }
-                    else if (t.sceneToLoad != null)
-                    {
-                        confirmation.gameObject.SetActive(true);
-                        confirmation.sceneToLoad=t.sceneToLoad;
-                    }
-                    //animate with t.Animate()
-                }
-                /*
-                bool e = false;
-                foreach (Interactable i in interactables) 
-                { 
-                    if (i.gameObject.activeInHierarchy) 
-                    {
-                        e = true;
-                    }
-                }
-                EToInteract.SetActive(e);*/
-            }
-            if (t.gameObject.activeInHierarchy)
-            {
-                e = true;
-            }
-        }
-        EToInteract.SetActive(e);
+        ////bool e = false;
+        //foreach (Interactable t in interactables)
+        //{
+        //    if (t == null)
+        //        continue;
 
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        { 
-            confirmation.gameObject.SetActive(false);
-            EToInteract.SetActive(false) ;
-            foreach (Interactable t in interactables)
-            {
-                if (t.prefabToLoad != null)
-                {
-                    t.prefabToLoad.SetActive(false);
-                }
-            }
-        }
-        EToInteract.SetActive(false);
+        //    if (Vector2.Distance(transform.position, t.transform.position) < distanceToInteract)
+        //    {
+        //        EToInteract.SetActive(true);
+        //        if (Input.GetKeyDown(KeyCode.E) && canMove)
+        //        {
+        //            EToInteract.SetActive(false);
+        //            //do something
+        //            if (t.prefabToLoad != null)
+        //            {
+        //                t.prefabToLoad.SetActive(true);
+        //            }
+        //            else if (t.sceneToLoad != null)
+        //            {
+        //                confirmation.gameObject.SetActive(true);
+        //                confirmation.sceneToLoad=t.sceneToLoad;
+        //            }
+        //            //animate with t.Animate()
+        //        }
+        //        /*
+        //        bool e = false;
+        //        foreach (Interactable i in interactables) 
+        //        { 
+        //            if (i.gameObject.activeInHierarchy) 
+        //            {
+        //                e = true;
+        //            }
+        //        }
+        //        EToInteract.SetActive(e);*/
+        //    }
+        //    else
+        //    {
+        //        EToInteract.SetActive(false);
+        //    }
+        //    //if (t.gameObject.activeInHierarchy)
+        //    //{
+        //    //    e = true;
+        //    //}
+        //}
+        //EToInteract.SetActive(e);
+
+        //if (Input.GetKeyDown(KeyCode.Escape)) 
+        //{ 
+        //    confirmation.gameObject.SetActive(false);
+        //    EToInteract.SetActive(false) ;
+        //    foreach (Interactable t in interactables)
+        //    {
+        //        if (t.prefabToLoad != null)
+        //        {
+        //            t.prefabToLoad.SetActive(false);
+        //            var dt = t.prefabToLoad.GetComponent<DialogTrigger>();
+
+        //            if (!dt)
+        //                continue;
+
+        //            dt.Begin(this);
+        //        }
+        //    }
+        //}
+
         moveDirection = Vector2.zero;
         if (Input.GetKey(KeyCode.A))
             moveDirection += speed * Vector2.left;
@@ -86,15 +105,31 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             moveDirection += speed * Vector2.down;
 
+        if (!canMove)
+            moveDirection = Vector2.zero;
+
         if (moveDirection.x > 0)
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
         else if (moveDirection.x < 0)
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
 
         if (moveDirection.magnitude > 0f)
+        {
             animator.SetBool("IsWalking", true);
+
+            if (playingWalkSound)
+                return;
+
+            Sounds.Foot.Play();
+            playingWalkSound = true;
+        }
         else
+        {
             animator.SetBool("IsWalking", false);
+            Sounds.Foot.Pause();
+            playingWalkSound = false;
+        }
+
     }
     private void FixedUpdate()
     {

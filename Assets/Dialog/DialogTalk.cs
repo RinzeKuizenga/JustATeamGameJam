@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +12,7 @@ public class DialogTalk : MonoBehaviour
     public List<string> sentences;
 
     public int tickDelay = 1;
-    public TextAsset file;
+    public string filepath;
     public Move playerMoveComponent;
 
     private int textIndex = 0;
@@ -28,14 +28,14 @@ public class DialogTalk : MonoBehaviour
         textIndex = 0;
         textIndex = 0;
         currentText = string.Empty;
-        sentenceIndex = -1;
+        sentenceIndex = 0;
         lastSentence = string.Empty;
         finished = false;
     }
 
     public void Begin()
     {
-        var content = file.text;
+        var content = File.ReadAllLines(filepath);
 
         if (content == null)
         {
@@ -43,13 +43,11 @@ public class DialogTalk : MonoBehaviour
             return;
         }
 
-        var all = content.Split("\n");
-
         names = new List<string>();
         sentences = new List<string>();
 
         int i = 0;
-        foreach (var line in all)
+        foreach (var line in content)
         {
             if (i == 0 || i % 2 == 0)
                 names.Add(line);
@@ -81,9 +79,6 @@ public class DialogTalk : MonoBehaviour
         if (sentenceIndex >= sentences.Count)
         {
             finished = true;
-
-            if (playerMoveComponent)
-                playerMoveComponent.canMove = true;
 
             return null;
         }
@@ -127,7 +122,15 @@ public class DialogTalk : MonoBehaviour
     void Update()
     {
         if (finished)
+        {
+            if (playerMoveComponent)
+                playerMoveComponent.canMove = true;
+
+            sentences.Clear();
+            names.Clear();
             Destroy(gameObject);
+        }
+
 
         if (Input.GetMouseButtonDown(0))
             NextSentence();
