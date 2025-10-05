@@ -636,42 +636,7 @@ MonoBehaviour:
   m_text: '
 
 
-    BACKGROUNDS
-
-
-
-    - Soceanam
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    GRAPHIC
-    DESIGNER - UI
-
-
-
-    - Lee Batteiger (creativelee_art)
-
-
-    - Darko Naumov
-
-
-    -
-    Sarah Werbach (Schrecklock)
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    CHARACTER
-    ART
+    CHARACTER ART
 
 
 
@@ -679,72 +644,24 @@ MonoBehaviour:
 
 
     - Lee Batteiger (creativelee_art)
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    ANIMATORS
-    AND PARTICLES / EFFECTS
-
-
-
-    - Soceanam
-
-
-    - Sarah Werbach (Shrecklock)
-
-
-
-
-
-    CONCEPT
-    ART
-
-
-
-    - Silas
-
-
-    - Alana Buckenmyer - Weaver
-
-
-    - Sarah Werbach (Schrecklock)
 
 
     -
     Raine (humanpersonfr)
 
 
-    - Soceam
-
-
-    - Lee Batteiger (creativelee_art)
 
 
 
+    ANIMATORS AND PARTICLES / EFFECTS
 
 
-    PROGRAMMERS
 
+    - Soceanam
 
 
     -
-    Rinze Kuizenga (Zift)
-
-
-    - Ruben Stender (R_b3n_)
-
-
-    - Darko Naumov (Darko)
-
-
-    -
-    Titouan Phillppe (Subzero)
-
+    Sarah Werbach (Shrecklock)
 
 
 
@@ -772,6 +689,30 @@ MonoBehaviour:
 
     -
     Alana Buckenmyer (Weaver)
+
+
+
+
+    PROGRAMMERS
+
+
+    - Rinze Kuizenga (Zift)
+
+
+    -
+    Ruben Stender (R_b3n_)
+
+
+    - Darko (Darko Naumov)
+
+
+    - Subzero (Titouan
+    Philippe)
+
+
+
+    SPECIAL THANKS
+
 
 
 '

@@ -57,16 +57,11 @@ public class GameManager : MonoBehaviour
 
         plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
 
-        // 🟢 Playtesting cheat: Press P to instantly win
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TriggerImmediateWin();
-        }
-
         if (BackgroundMusic.isPlaying == false && beatScroller.hasStarted)
         {
             if (points >= 100)
             {
+
                 winAnim.SetTrigger("Win");
             }
             else
@@ -133,21 +128,6 @@ public class GameManager : MonoBehaviour
 
         Audio_Script.instance.PlayMiss();
         Debug.Log("Hit played");
-    }
-
-    public void TriggerImmediateWin()
-    {
-        Debug.Log("Playtesting: Forced win triggered!");
-
-        // Stop the song so Update() doesn't override us
-        if (BackgroundMusic.isPlaying)
-            BackgroundMusic.Stop();
-
-        // Prevent further scrolling
-        beatScroller.hasStarted = false;
-
-        // Trigger the win animation right away
-        winAnim.SetTrigger("Win");
     }
 
 
