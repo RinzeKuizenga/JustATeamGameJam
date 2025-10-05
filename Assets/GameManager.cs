@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Slider plushieSlider;
-    public int points;
+    public float points;
     public int combo;
 
     public TextMeshProUGUI comboText;
@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     [Header("BeatScroller Reference")]
     public BeatScroller beatScroller;      // 👈 assign in inspector
 
+    [Header("Easy to change variables")]
+    public float pointWorth;
+    public float pointWorthPerfect;
+    public float pointWorthMiss;
+
     void Start()
     {
         instance = this;
@@ -50,16 +55,12 @@ public class GameManager : MonoBehaviour
 
         plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
 
-        if (!BackgroundMusic.isPlaying)
+        if (BackgroundMusic.isPlaying == false && beatScroller.hasStarted)
         {
             if (points >= 100)
-            {
                 winAnim.SetTrigger("Win");
-            }
-            else if (points <= 100) 
-            {
+            else
                 loseAnim.SetTrigger("Lose");
-            }
         }
     }
 
@@ -92,26 +93,37 @@ public class GameManager : MonoBehaviour
     public void PerfectHit(int lane)
     {
         combo++;
-        points += 10;
+        points += pointWorthPerfect;
         ShowFeedback(perfect);
         PlayParticles(perfectParticles, lane);
+        Audio_Script.instance.PlayHitStreak();
     }
 
     public void GoodHit(int lane)
     {
         combo++;
-        points += 5;
+        points += pointWorth;
         ShowFeedback(good);
         PlayParticles(goodParticles, lane);
+        Audio_Script.instance.PlayHitStreak();
     }
 
     public void NoteMissed(int lane)
     {
-        points -= 2;
+        // Prevent early misses during countdown
+        if (!beatScroller.hasStarted)
+            return;
+
+        points -= pointWorthMiss;
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
+
+        Audio_Script.instance.PlayMiss();
+        Debug.Log("Hit played");
     }
+
+
 
     private void ShowFeedback(Sprite feedback)
     {
