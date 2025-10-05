@@ -1,7 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections;   // <-- Needed for Coroutines
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int combo;
 
     public TextMeshProUGUI comboText;
-    public TextMeshProUGUI countdownText;
+    public TextMeshProUGUI countdownText;   // 👈 drag your TMP object here in inspector
 
     public SpriteRenderer feedbackRenderer;
     public Sprite perfect;
@@ -29,24 +30,13 @@ public class GameManager : MonoBehaviour
     public AudioSource BackgroundMusic;
 
     [Header("BeatScroller Reference")]
-    public BeatScroller beatScroller;
+    public BeatScroller beatScroller;      // 👈 assign in inspector
 
     [Header("Easy to change variables")]
     public float pointWorth;
     public float pointWorthPerfect;
     public float pointWorthMiss;
-
-    // 🟢 Player Character Sprite
-    [Header("Player Character")]
-    public SpriteRenderer playerRenderer;
-    public Sprite playerSad;
-    public Sprite playerNeutral;
-    public Sprite playerHappy;
-
-    // thresholds to decide moods
-    [Header("Mood thresholds")]
-    public int happyComboThreshold = 10;     // above this = happy
-    public int sadComboThreshold = 0;        // when combo resets / low score = sad
+    public string sceneChanger;
 
     void Start()
     {
@@ -57,45 +47,53 @@ public class GameManager : MonoBehaviour
         feedbackRenderer.sprite = null;
         BackgroundMusic.volume = 0f;
 
-        // Set player to neutral at start
-        if (playerRenderer != null)
-            playerRenderer.sprite = playerNeutral;
-
+        // Start countdown when scene loads
         StartCoroutine(StartCountdown());
     }
 
     void Update()
     {
         comboText.text = $"Combo {combo}";
-        plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
 
-        UpdatePlayerMood();   // <-- check mood every frame
+        plushieSlider.value = Mathf.Lerp(plushieSlider.value, points, sliderSpeed * Time.deltaTime);
 
         if (BackgroundMusic.isPlaying == false && beatScroller.hasStarted)
         {
             if (points >= 100)
+            {
+
                 winAnim.SetTrigger("Win");
+                SceneManager.UnloadScene(sceneChanger);
+                Debug.Log("Scene Unloaded!!!");
+            }
             else
+            {
                 loseAnim.SetTrigger("Lose");
+            }
         }
     }
 
     IEnumerator StartCountdown()
     {
+        // disable scrolling until countdown done
         beatScroller.hasStarted = false;
+
         countdownText.gameObject.SetActive(true);
 
+        // 3..2..1..
         for (int i = 3; i > 0; i--)
         {
             countdownText.text = i.ToString();
             yield return new WaitForSeconds(1f);
         }
 
+        // GO!
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.5f);
 
         countdownText.gameObject.SetActive(false);
 
+        // Now start the music and movement
         BackgroundMusic.volume = 1f;
         BackgroundMusic.Play();
         beatScroller.hasStarted = true;
@@ -108,8 +106,6 @@ public class GameManager : MonoBehaviour
         ShowFeedback(perfect);
         PlayParticles(perfectParticles, lane);
         Audio_Script.instance.PlayHitStreak();
-
-        UpdatePlayerMood();
     }
 
     public void GoodHit(int lane)
@@ -119,12 +115,11 @@ public class GameManager : MonoBehaviour
         ShowFeedback(good);
         PlayParticles(goodParticles, lane);
         Audio_Script.instance.PlayHitStreak();
-
-        UpdatePlayerMood();
     }
 
     public void NoteMissed(int lane)
     {
+        // Prevent early misses during countdown
         if (!beatScroller.hasStarted)
             return;
 
@@ -132,12 +127,12 @@ public class GameManager : MonoBehaviour
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
+
         Audio_Script.instance.PlayMiss();
-
         Debug.Log("Hit played");
-
-        UpdatePlayerMood();
     }
+
+
 
     private void ShowFeedback(Sprite feedback)
     {
@@ -151,25 +146,6 @@ public class GameManager : MonoBehaviour
         {
             particleArray[lane].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             particleArray[lane].Play();
-        }
-    }
-
-    // 🟢 Player Mood Update
-    private void UpdatePlayerMood()
-    {
-        if (playerRenderer == null) return;
-
-        if (combo >= happyComboThreshold)
-        {
-            playerRenderer.sprite = playerHappy;
-        }
-        else if (combo <= sadComboThreshold)
-        {
-            playerRenderer.sprite = playerSad;
-        }
-        else
-        {
-            playerRenderer.sprite = playerNeutral;
         }
     }
 }

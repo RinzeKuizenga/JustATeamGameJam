@@ -8,6 +8,7 @@ public class Interactable : MonoBehaviour
     public Animator animator;
     public SceneAsset sceneToLoad;
     public GameObject ui;
+    public int dialogId = 0;
     private Move player;
     private confirmBox confirmUI;
     private GameObject interactUI;
@@ -70,6 +71,9 @@ public class Interactable : MonoBehaviour
             }
 
             player.canMove = false;
+
+            if (dialogId != 0)
+                player.seenDialogId.Add(dialogId);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

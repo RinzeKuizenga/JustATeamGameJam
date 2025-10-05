@@ -10,6 +10,9 @@ public class DialogTrigger : MonoBehaviour
     public int id = 1;
     public int onlyAfterId = 0;
     public bool fired = false;
+    public Spawner spawner;
+    public Animator animator;
+    public string trigger;
 
     public void Begin(Move move)
     {
@@ -48,5 +51,11 @@ public class DialogTrigger : MonoBehaviour
             return;
 
         Begin(move);
+
+        if (spawner)
+            spawner.Spawn();
+
+        if (animator != null && trigger != string.Empty)
+            animator.SetTrigger(trigger);
     }
 }
