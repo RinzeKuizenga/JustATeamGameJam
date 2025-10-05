@@ -127,6 +127,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 150219127106264059, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 150219127106264059, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1392435246104467822, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
       propertyPath: m_Name
       value: Bedroom
@@ -200,7 +208,8 @@ PrefabInstance:
       value: -6.9362783
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5088258300113174941, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
@@ -227,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 840476124290846966, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.68797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: confirmUI
