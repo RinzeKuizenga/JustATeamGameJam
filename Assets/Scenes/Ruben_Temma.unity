@@ -8052,6 +8052,9 @@ MonoBehaviour:
   sliderSpeed: 5
   BackgroundMusic: {fileID: 1263441423}
   beatScroller: {fileID: 932561498}
+  pointWorth: 0.5
+  pointWorthPerfect: 1
+  pointWorthMiss: 2
 --- !u!4 &653721314
 Transform:
   m_ObjectHideFlags: 0
@@ -16123,8 +16126,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: -5043528495432702037, guid: 3020ca508fadb4a4084849f297ddbb89, type: 3}
-  m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+  m_Sprite: {fileID: 6824480284524792502, guid: 13ec68b5158a4cf4e93a4a16474fcaf5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16143,7 +16146,7 @@ Transform:
   m_GameObject: {fileID: 1318992231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2694, y: 0.0215, z: 0}
+  m_LocalPosition: {x: -0.2694, y: -0.03, z: 0}
   m_LocalScale: {x: 1.0339278, y: 1.0641632, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

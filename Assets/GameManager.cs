@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Slider plushieSlider;
-    public int points;
+    public float points;
     public int combo;
 
     public TextMeshProUGUI comboText;
@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     [Header("BeatScroller Reference")]
     public BeatScroller beatScroller;      // 👈 assign in inspector
+
+    [Header("Easy to change variables")]
+    public float pointWorth;
+    public float pointWorthPerfect;
+    public float pointWorthMiss;
 
     void Start()
     {
@@ -88,7 +93,7 @@ public class GameManager : MonoBehaviour
     public void PerfectHit(int lane)
     {
         combo++;
-        points += 10;
+        points += pointWorthPerfect;
         ShowFeedback(perfect);
         PlayParticles(perfectParticles, lane);
         Audio_Script.instance.PlayHitStreak();
@@ -97,7 +102,7 @@ public class GameManager : MonoBehaviour
     public void GoodHit(int lane)
     {
         combo++;
-        points += 5;
+        points += pointWorth;
         ShowFeedback(good);
         PlayParticles(goodParticles, lane);
         Audio_Script.instance.PlayHitStreak();
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
         if (!beatScroller.hasStarted)
             return;
 
-        points -= 2;
+        points -= pointWorthMiss;
         combo = 0;
         ShowFeedback(miss);
         PlayParticles(missParticles, lane);
