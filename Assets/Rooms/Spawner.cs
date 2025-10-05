@@ -6,8 +6,8 @@ public class Spawner : MonoBehaviour
 {
     public List<GameObject> spawnables;
     private Move player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public void Spawn()
     {
         foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
         {
@@ -22,6 +22,11 @@ public class Spawner : MonoBehaviour
                 var spawn = Instantiate(spawnable);
                 spawn.transform.SetParent(transform, false);
             }
+    }
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Spawn();
     }
 }
