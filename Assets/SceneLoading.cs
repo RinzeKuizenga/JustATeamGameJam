@@ -30,4 +30,19 @@ public class SceneLoading : MonoBehaviour
     {
         SceneManager.UnloadScene(sceneName);
     }
+
+    public void LoadMinigame2()
+    {
+        SceneManager.LoadScene("Ruben_Temma");
+    }
+
+    public void LoadMinigame1()
+    {
+        SceneManager.LoadScene("ZiftScene");
+    }
+
+    public void LoadMinigame3()
+    {
+        SceneManager.LoadScene("ZiftScene 1");
+    }
 }
