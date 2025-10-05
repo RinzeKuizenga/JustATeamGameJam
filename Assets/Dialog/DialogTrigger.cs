@@ -15,11 +15,12 @@ public class DialogTrigger : MonoBehaviour
     {
         if (move.seenDialogId.Contains(id))
             return;
-        move.seenDialogId.Add(id);
 
         if (onlyAfterId > 0)
             if (!move.seenDialogId.Contains(onlyAfterId))
                 return;
+
+        move.seenDialogId.Add(id);
 
         if (canvas == null)
         {

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 358372702883194635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.44, y: -4.74, z: -0.23088676}
+  m_LocalPosition: {x: 2.63, y: -1.25, z: -0.23088676}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -140,7 +140,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 25
+  m_Radius: 45
 --- !u!114 &164071734714636500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71cd20a9ab69b64f8a6b58f7a00451f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDialogId: 3
+  spawnDialogId: 4
