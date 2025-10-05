@@ -185,6 +185,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: confirmUI
+      value: 
+      objectReference: {fileID: 1583468627}
+    - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
+      propertyPath: interactUI
+      value: 
+      objectReference: {fileID: 1885255840}
+    - target: {fileID: 3354593864307505274, guid: 107f4eff919955c45be97a8e8bb0c994, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1885255840}

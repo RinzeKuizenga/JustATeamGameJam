@@ -1,23 +1,26 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class confirmBox : MonoBehaviour
 {
     public SceneAsset sceneToLoad=null;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Move player;
 
     public void LoadS() 
-    { 
-        //loads scene
+    {
+        if (!sceneToLoad)
+            return;
+
+        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
+
+        // THEN UNLOAD THE SCENE AT SOME POINT
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoBack()
     {
-        
+        gameObject.SetActive(false);
+        player.canMove = true;
+        player.interactUI.SetActive(true);
     }
 }

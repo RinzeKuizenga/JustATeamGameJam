@@ -28,6 +28,12 @@ public class RoomTransition : MonoBehaviour
         var comps = newRoom.GetComponentsInChildren<Spawnable>(true);
 
         foreach (var comp in comps)
-            comp.CheckSpawn(collider.GetComponent<Move>());
+        {
+            var move = collider.GetComponent<Move>();
+            if (move.seenDialogId.Contains(comp.spawnDialogId))
+                comp.gameObject.SetActive(true);
+            else
+                comp.gameObject.SetActive(false);
+        }
     }
 }

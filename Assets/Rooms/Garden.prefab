@@ -805,6 +805,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1987992099884273685, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+      propertyPath: m_Radius
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6243579172725724316, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.055
@@ -856,6 +860,10 @@ PrefabInstance:
     - target: {fileID: 6243579172725724316, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
+      propertyPath: ui
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6935020451412540990, guid: 8a80e48cd5f09a042a05ced9985caa64, type: 3}
       propertyPath: sceneToLoad
