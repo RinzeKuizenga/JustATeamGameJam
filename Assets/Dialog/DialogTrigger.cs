@@ -8,6 +8,7 @@ public class DialogTrigger : MonoBehaviour
     public Transform canvas;
     public string textFilePath;
     public int id = 1;
+    public int onlyAfterId = 0;
     public bool fired = false;
 
     public void Begin(Move move)
@@ -15,6 +16,10 @@ public class DialogTrigger : MonoBehaviour
         if (move.seenDialogId.Contains(id))
             return;
         move.seenDialogId.Add(id);
+
+        if (onlyAfterId > 0)
+            if (!move.seenDialogId.Contains(onlyAfterId))
+                return;
 
         if (canvas == null)
         {
