@@ -5,6 +5,7 @@ public class SceneLoading : MonoBehaviour
 {
     public Animator animator;
     public string sceneName;
+    public AudioSource mainmenusound;
     void Start()
     {
         
@@ -15,8 +16,14 @@ public class SceneLoading : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            mainmenusound.Play();
             animator.SetTrigger("Start");
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadGame()
