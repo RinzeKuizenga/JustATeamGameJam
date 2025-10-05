@@ -161,7 +161,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -7.039292, y: -2.4213557}
+  m_Offset: {x: -7.253929, y: -2.4213557}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -171,7 +171,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6680937, y: 0.97266865}
+  m_Size: {x: 1.5596657, y: 0.97266865}
   m_EdgeRadius: 0
 --- !u!114 &4717498196135749741
 MonoBehaviour:
@@ -188,6 +188,7 @@ MonoBehaviour:
   newRoom: {fileID: 1007421302066799270, guid: f9bda8876a8263b46bb182c5eb2bee30, type: 3}
   oldRoom: {fileID: 1392435246104467822}
   unlocked: 1
+  unlockOnDialogId: 0
   soundName: DoorOpen
   spawnName: Spawn
   roomType: Wood
