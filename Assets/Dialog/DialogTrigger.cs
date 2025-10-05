@@ -12,9 +12,9 @@ public class DialogTrigger : MonoBehaviour
 
     public void Begin(Move move)
     {
-        foreach (var currentId in move.seenDialogId)
-            if (currentId == id)
-                return;
+        if (move.seenDialogId.Contains(id))
+            return;
+        move.seenDialogId.Add(id);
 
         if (canvas == null)
         {
@@ -27,7 +27,6 @@ public class DialogTrigger : MonoBehaviour
         instance.filepath = textFilePath;
         instance.Begin();
         fired = true;
-        move.seenDialogId.Add(id);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
