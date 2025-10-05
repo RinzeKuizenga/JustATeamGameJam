@@ -786,7 +786,7 @@ MonoBehaviour:
   newRoom: {fileID: 1007421302066799270, guid: f9bda8876a8263b46bb182c5eb2bee30, type: 3}
   oldRoom: {fileID: 3220338975427903789}
   unlocked: 1
-  soundName: Stairs
+  soundName: DoorOpen
   spawnName: SpawnGarden
   roomType: Carpet
 --- !u!1001 &5070349016295381043

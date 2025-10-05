@@ -2,7 +2,7 @@
 - Project name: JustATeamGameJam
 - Unity version: Unity 6000.0.30f1
 - Active game object:
-  - Name: DoorTrigger (2)
+  - Name: Hallway1
   - Tag: Untagged
-  - Layer: Ignore Raycast
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -172,8 +172,9 @@ MonoBehaviour:
   newRoom: {fileID: 7129128917408209580, guid: f400f4e4b526ae142b997c59852e0e88, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
-  soundName: Door
+  soundName: DoorOpen
   spawnName: Spawn
+  roomType: Carpet
 --- !u!1 &518942868625669742
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,8 +347,9 @@ MonoBehaviour:
   newRoom: {fileID: 1392435246104467822, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
-  soundName: Door
+  soundName: DoorOpen
   spawnName: Spawn
+  roomType: Carpet
 --- !u!1 &4044246534156095828
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,8 +870,9 @@ MonoBehaviour:
   newRoom: {fileID: 6757259767425573568, guid: 3a695aa757517004bb6563fab4eea2d1, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
-  soundName: Stairs
+  soundName: DoorOpen
   spawnName: Spawn
+  roomType: Carpet
 --- !u!1 &9135365701061117265
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,5 +967,6 @@ MonoBehaviour:
   newRoom: {fileID: 1392435246104467822, guid: 757a552fdd8c7d646848a48c0e1633f0, type: 3}
   oldRoom: {fileID: 5001416808053643900}
   unlocked: 1
-  soundName: Door
+  soundName: DoorOpen
   spawnName: Spawn
+  roomType: Carpet
