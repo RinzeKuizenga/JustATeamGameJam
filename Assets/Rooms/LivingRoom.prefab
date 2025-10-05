@@ -955,7 +955,7 @@ MonoBehaviour:
   unlocked: 1
   soundName: Stairs
   spawnName: SpawnBottom
-  roomType: Carpet
+  roomType: Wood
 --- !u!1 &4430637347508588810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   unlocked: 1
   soundName: DoorOpen
   spawnName: Spawn
-  roomType: Carpet
+  roomType: Grass
 --- !u!1 &6548317543473295739
 GameObject:
   m_ObjectHideFlags: 0

@@ -270,7 +270,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newRoom: {fileID: 5001416808053643900, guid: 0ec13f9c1b4b88e448e8d214d816af87, type: 3}
   oldRoom: {fileID: 1392435246104467822}
+  unlocked: 1
+  soundName: DoorOpen
   spawnName: Spawn
+  roomType: Wood
 --- !u!1 &5088258300113174941
 GameObject:
   m_ObjectHideFlags: 0

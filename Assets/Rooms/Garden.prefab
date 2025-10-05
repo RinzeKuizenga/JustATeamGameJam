@@ -788,7 +788,7 @@ MonoBehaviour:
   unlocked: 1
   soundName: DoorOpen
   spawnName: SpawnGarden
-  roomType: Carpet
+  roomType: Wood
 --- !u!1001 &5070349016295381043
 PrefabInstance:
   m_ObjectHideFlags: 0

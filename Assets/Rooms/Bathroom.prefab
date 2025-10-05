@@ -205,7 +205,7 @@ MonoBehaviour:
   unlocked: 1
   soundName: Door
   spawnName: SpawnBathroom
-  roomType: Carpet
+  roomType: Wood
 --- !u!1 &6894673898108396919
 GameObject:
   m_ObjectHideFlags: 0
