@@ -9,7 +9,7 @@ public class Sounds : MonoBehaviour
  // Change this to make music  louder/quieter
     public static AudioSource Music; 
  // A looping music
-    public static float FootEffects = 1f; 
+    public static float FootEffects = 0.6f; 
  // Change this to make music  louder/quieter
     public static AudioSource Foot; 
  // A looping music
