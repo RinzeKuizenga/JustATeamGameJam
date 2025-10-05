@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnables:
   - {fileID: 358372702883194635, guid: a64bdb3a8b62e8f46b506509d1e5f56a, type: 3}
+  - {fileID: 1200191313006408010, guid: 96aa395e2493f3149ab45b1d4bc73513, type: 3}
 --- !u!1 &4893774201797307831
 GameObject:
   m_ObjectHideFlags: 0
