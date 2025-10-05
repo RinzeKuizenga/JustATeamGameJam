@@ -12,6 +12,9 @@ public class confirmBox : MonoBehaviour
         if (!sceneToLoad)
             return;
 
+        foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
+            go.SetActive(false);
+
         SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
 
         // THEN UNLOAD THE SCENE AT SOME POINT

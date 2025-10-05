@@ -1166,7 +1166,7 @@ MonoBehaviour:
   newRoom: {fileID: 1392435246104467822, guid: 577240ba75e7cb34ea86bdac4a5661c7, type: 3}
   oldRoom: {fileID: 1007421302066799270}
   unlocked: 0
-  unlockOnDialogId: 3
+  unlockOnDialogId: 6
   soundName: DoorOpen
   spawnName: Spawn
   roomType: Carpet
