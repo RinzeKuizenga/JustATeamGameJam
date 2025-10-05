@@ -63,8 +63,6 @@ public class GameManager : MonoBehaviour
             {
 
                 winAnim.SetTrigger("Win");
-                SceneManager.UnloadScene(sceneChanger);
-                Debug.Log("Scene Unloaded!!!");
             }
             else
             {
