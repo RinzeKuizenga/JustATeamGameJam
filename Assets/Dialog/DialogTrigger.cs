@@ -25,6 +25,9 @@ public class DialogTrigger : MonoBehaviour
 
         move.seenDialogId.Add(id);
 
+        if (animator != null && trigger != string.Empty)
+            animator.SetTrigger(trigger);
+
         if (canvas == null)
         {
             canvas = Array.Find<GameObject>(SceneManager.GetActiveScene().GetRootGameObjects(), s => s.name == "Canvas").transform;
@@ -54,8 +57,5 @@ public class DialogTrigger : MonoBehaviour
 
         if (spawner)
             spawner.Spawn();
-
-        if (animator != null && trigger != string.Empty)
-            animator.SetTrigger(trigger);
     }
 }

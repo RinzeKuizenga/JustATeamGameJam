@@ -3305,7 +3305,7 @@ MonoBehaviour:
   pointWorth: 1.5
   pointWorthPerfect: 2.25
   pointWorthMiss: 1.5
-  sceneChanger: 
+  sceneChanger: ZiftScene
 --- !u!4 &598365464
 Transform:
   m_ObjectHideFlags: 0
@@ -11360,7 +11360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneName: 
+  sceneName: ZiftScene
 --- !u!1 &2102931779
 GameObject:
   m_ObjectHideFlags: 0
