@@ -108,7 +108,7 @@ public class Interactable : MonoBehaviour
             if (go.name != "Canvas" || !uiPrefab)
                 continue;
 
-            uiPrefab.transform.SetParent(go.transform);
+            uiPrefab.transform.SetParent(go.transform, false);
         }
         //// Self assign to player
         //foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
