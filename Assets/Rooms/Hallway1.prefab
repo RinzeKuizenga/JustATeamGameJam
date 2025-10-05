@@ -872,7 +872,7 @@ MonoBehaviour:
   unlocked: 1
   soundName: 
   spawnName: Spawn
-  roomType: Carpet
+  roomType: Wood
 --- !u!1 &9135365701061117265
 GameObject:
   m_ObjectHideFlags: 0
