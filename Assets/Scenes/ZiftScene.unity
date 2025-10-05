@@ -3276,9 +3276,10 @@ MonoBehaviour:
   sliderSpeed: 5
   BackgroundMusic: {fileID: 1668530048}
   beatScroller: {fileID: 1672950085}
-  pointWorth: 0
-  pointWorthPerfect: 0
-  pointWorthMiss: 0
+  pointWorth: 1.5
+  pointWorthPerfect: 2.25
+  pointWorthMiss: 1.5
+  sceneChanger: 
 --- !u!4 &598365464
 Transform:
   m_ObjectHideFlags: 0
@@ -11334,6 +11335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  sceneName: 
 --- !u!1 &2102931779
 GameObject:
   m_ObjectHideFlags: 0
