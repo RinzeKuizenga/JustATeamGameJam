@@ -43,7 +43,7 @@ public class DialogTrigger : MonoBehaviour
         dialog.playerMoveComponent = move;
 
         if (monster)
-            Instantiate(monster, canvas);
+            Instantiate(monster, spawner.transform);
 
         instance.filepath = textFilePath;
         instance.Begin();
@@ -83,6 +83,7 @@ public class DialogTrigger : MonoBehaviour
         if (endBox)
         {
             Instantiate(endBox, canvas);
+            endBox.SetActive(true);
             endBoxAdded = true;
         }   
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ending_Buttons : MonoBehaviour
 {
@@ -23,5 +24,16 @@ public class Ending_Buttons : MonoBehaviour
     private void SetFalse()
     {
         gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            if (!go.CompareTag("Player"))
+                continue;
+
+            go.GetComponent<Move>().canMove = false;
+        }
     }
 }
