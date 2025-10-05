@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoading : MonoBehaviour
@@ -28,15 +28,13 @@ public class SceneLoading : MonoBehaviour
     {
         foreach (var go in SceneManager.GetSceneByName("Rooms").GetRootGameObjects())
         {
-            go.SetActive(true);
+            if (go.name == "confirmBox" || go.name == "EBox")
+                continue;
 
-            //if (go.name == "Canvas")
-            //{
-            //    go.transform.Find("confirmBox").gameObject.SetActive(false);
-            //    go.transform.Find("EBox").gameObject.SetActive(false);
-            //}
+            go.SetActive(true);
         }
             
+
         foreach (var go in SceneManager.GetSceneByName(sceneName).GetRootGameObjects())
             go.SetActive(false);
 
