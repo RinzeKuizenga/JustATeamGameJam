@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;   // <-- Needed for Coroutines
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
