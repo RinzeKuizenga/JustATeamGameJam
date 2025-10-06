@@ -1,38 +1,36 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
     public Animator animator;
-    public SceneAsset sceneToLoad;
+
+#if UNITY_EDITOR
+    public SceneAsset sceneToLoad; // Only visible in Editor
+#endif
+
+    [SerializeField, HideInInspector]
+    private string sceneToLoadName; // Used at runtime
+
     public GameObject ui;
     public int dialogId = 0;
     private Move player;
     private confirmBox confirmUI;
     private GameObject interactUI;
-
     private GameObject uiPrefab;
 
-    public void Animate(string paramName)
-    // paramName : parameter of the animator to animate
-    {
-        animator.SetBool(paramName, true);
-    }
-
-    public void UnAnimate(string paramName)
-    // paramName : parameter of the animator to un-animate
-    {
-        animator.SetBool(paramName, false);
-    }
+    public void Animate(string paramName) => animator.SetBool(paramName, true);
+    public void UnAnimate(string paramName) => animator.SetBool(paramName, false);
 
     private void OnTriggerEnter2D(Collider2D c)
     {
-        if (!c.gameObject.CompareTag("Player"))
+        if (!c.CompareTag("Player"))
             return;
 
-        player = c.gameObject.GetComponent<Move>();
+        player = c.GetComponent<Move>();
         interactUI = player.interactUI;
         confirmUI = player.confirmUI;
         interactUI.SetActive(true);
@@ -40,15 +38,12 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D c)
     {
-        if (!c.gameObject.CompareTag("Player"))
+        if (!c.CompareTag("Player"))
             return;
 
         player = null;
-
-        if (!interactUI)
-            return;
-
-        interactUI.SetActive(false);
+        if (interactUI)
+            interactUI.SetActive(false);
     }
 
     private void Update()
@@ -59,15 +54,14 @@ public class Interactable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && player.canMove)
         {
             interactUI.SetActive(false);
-
             if (uiPrefab)
                 uiPrefab.SetActive(true);
 
-            if (sceneToLoad)
+            if (!string.IsNullOrEmpty(sceneToLoadName))
             {
                 confirmUI.gameObject.SetActive(true);
                 confirmUI.player = player;
-                confirmUI.sceneToLoad = sceneToLoad;
+                confirmUI.sceneToLoadName = sceneToLoadName;
             }
 
             player.canMove = false;
@@ -87,15 +81,12 @@ public class Interactable : MonoBehaviour
 
             var dt = uiPrefab.GetComponent<DialogTrigger>();
             uiPrefab.SetActive(false);
-
-            if (!dt)
-                return;
-
-            dt.Begin(player);
+            if (dt)
+                dt.Begin(player);
         }
     }
 
-    public void Start()
+    private void Start()
     {
         if (ui)
         {
@@ -103,10 +94,9 @@ public class Interactable : MonoBehaviour
             uiPrefab.SetActive(false);
         }
 
-
         if (confirmUI)
             confirmUI.gameObject.SetActive(false);
-        // Self assign to player
+
         foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
         {
             if (go.name != "Canvas" || !uiPrefab)
@@ -114,19 +104,13 @@ public class Interactable : MonoBehaviour
 
             uiPrefab.transform.SetParent(go.transform, false);
         }
-        //// Self assign to player
-        //foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
-        //{
-        //    var move = go.GetComponentInChildren<Move>();
-        //    if (move)
-        //        move.interactables.Add(this);
-
-        //    if (!movePrefabToCanvas || go.name != "Canvas" || !prefab)
-        //        continue;
-
-        //    prefab.transform.SetParent(go.transform, false);
-        //    prefab.SetActive(false);
-        //    prefabToLoad = prefab;
-        //}
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (sceneToLoad != null)
+            sceneToLoadName = sceneToLoad.name;
+    }
+#endif
 }
