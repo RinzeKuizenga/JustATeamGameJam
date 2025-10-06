@@ -146,8 +146,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5e50d5f45d64dfc4b96d9f78b219e248, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5e50d5f45d64dfc4b96d9f78b219e248, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d6a186f063638c949b1924f07f1ca4e2, type: 3}
+  m_Resource: {fileID: 8300000, guid: d6a186f063638c949b1924f07f1ca4e2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -335,6 +335,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &670442624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670442625}
+  - component: {fileID: 670442627}
+  - component: {fileID: 670442626}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &670442625
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670442624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.65, y: 3.65, z: 3.65}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1561779423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -9540}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &670442626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670442624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 905841058839569362, guid: ec8fca6e76d2a214fad1975ae3da915c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &670442627
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670442624}
+  m_CullTransparentMesh: 1
 --- !u!1 &806121959
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,165 +708,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-
-    BACKGROUNDS
-
-
-
-    - Soceanam
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    GRAPHIC
-    DESIGNER - UI
-
-
-
-    - Lee Batteiger (creativelee_art)
-
-
-    - Darko Naumov
-
-
-    -
-    Sarah Werbach (Schrecklock)
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    CHARACTER
-    ART
-
-
-
-    - Silas
-
-
-    - Lee Batteiger (creativelee_art)
-
-
-    - Raine (humanpersonfr)
-
-
-
-
-
-    ANIMATORS
-    AND PARTICLES / EFFECTS
-
-
-
-    - Soceanam
-
-
-    - Sarah Werbach (Schrecklock)
-
-
-
-
-
-    CONCEPT
-    ART
-
-
-
-    - Silas
-
-
-    - Alana Buckenmyer - Weaver
-
-
-    - Sarah Werbach (Schrecklock)
-
-
-    -
-    Raine (humanpersonfr)
-
-
-    - Soceam
-
-
-    - Lee Batteiger (creativelee_art)
-
-
-
-
-
-    PROGRAMMERS
-
-
-
-    -
-    Rinze Kuizenga (Zift)
-
-
-    - Ruben Stender (R_b3n_)
-
-
-    - Darko Naumov (Darko)
-
-
-    -
-    Titouan Phillppe (Subzero)
-
-
-
-
-
-    WRITERS
-
-
-
-    - Garret Elstran
-
-
-    - Alana
-    Buckenmyer (Weaver)
-
-
-    - Lee Batteiger (creativelee_art)
-
-
-
-
-
-    MUSICIAN(S)
-
-
-
-    -
-    Alana Buckenmyer (Weaver)
-
-
-
-
-
-
-    SPECIAL THANKS
-
-
-    -Jacksepticeye
-
-
-    -DuckyDev
-
-
-
-
-
-
-'
+  m_text: "\n\nBACKGROUNDS\n\n\n- Soceanam\n\n- Raine (humanpersonfr)\n\n\n\n\nGRAPHIC
+    DESIGNER - UI\n\n\n- Lee Batteiger (creativelee_art)\n\n- Darko Naumov\n\n- Sarah
+    Werbach (Schrecklock)\n\n- Raine (humanpersonfr)\n\n\n\n\nCHARACTER ART\n\n\n-
+    Silas\n\n- Lee Batteiger (creativelee_art)\n\n- Raine (humanpersonfr)\n\n\n\n\nANIMATORS
+    AND PARTICLES / EFFECTS\n\n\n- Soceanam\n\n- Sarah Werbach (Schrecklock)\n\n\n\n\nCONCEPT
+    ART\n\n\n- Silas\n\n- Alana Buckenmyer - Weaver\n\n- Sarah Werbach (Schrecklock)\n\n-
+    Raine (humanpersonfr)\n\n- Soceam\n\n- Lee Batteiger (creativelee_art)\n\n\n\n\nPROGRAMMERS\n\n\n-
+    Rinze Kuizenga (Zift)\n\n- Ruben Stender (R_b3n_)\n\n- Darko Naumov (Darko)\n\n-
+    Titouan Phillppe (Subzero)\n\n\n\n\nWRITERS\n\n\n- Garret Elstran\n\n- Alana
+    Buckenmyer (Weaver)\n\n- Lee Batteiger (creativelee_art)\n\n\n\n\nMUSICIAN(S)\n\n\n-
+    Alana Buckenmyer (Weaver)\n\n\n\n\n\nSPECIAL THANKS\n\n-Jacksepticeye\n\n-DuckyDev\n\n\n\nIn
+    loving memory\n\nJackie Batteiger \r\n1973 - 2023 \r\nGoodnight, I love you,
+    I'll see you in the morning.\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0941833194e16f44a4ad96a4b2bd63d, type: 2}
   m_sharedMaterial: {fileID: -6873172962463641052, guid: d0941833194e16f44a4ad96a4b2bd63d, type: 2}
@@ -1047,6 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561779423}
   - component: {fileID: 1561779424}
+  - component: {fileID: 1561779425}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1069,6 +999,7 @@ RectTransform:
   - {fileID: 1292252041}
   - {fileID: 806121960}
   - {fileID: 1245775389}
+  - {fileID: 670442625}
   m_Father: {fileID: 823035779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1098,6 +1029,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1561779425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561779422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacb982a42f7dba4ea6bf2de701f9280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  sceneName: 
+  mainmenusound: {fileID: 0}
 --- !u!1 &1919046424
 GameObject:
   m_ObjectHideFlags: 0

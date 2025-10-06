@@ -1,23 +1,29 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class confirmBox : MonoBehaviour
 {
-    public SceneAsset sceneToLoad=null;
+#if UNITY_EDITOR
+    public SceneAsset sceneToLoad; // Only editable in Editor
+#endif
+
+    [SerializeField, HideInInspector]
+    public string sceneToLoadName; // Used at runtime
+
     public Move player;
 
-    public void LoadS() 
+    public void LoadS()
     {
-        if (!sceneToLoad)
+        if (string.IsNullOrEmpty(sceneToLoadName))
             return;
 
         foreach (var go in SceneManager.GetActiveScene().GetRootGameObjects())
             go.SetActive(false);
 
-        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Additive);
-
-        // THEN UNLOAD THE SCENE AT SOME POINT
+        SceneManager.LoadScene(sceneToLoadName, LoadSceneMode.Additive);
     }
 
     public void GoBack()
@@ -26,4 +32,12 @@ public class confirmBox : MonoBehaviour
         player.canMove = true;
         player.interactUI.SetActive(true);
     }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (sceneToLoad != null)
+            sceneToLoadName = sceneToLoad.name;
+    }
+#endif
 }
