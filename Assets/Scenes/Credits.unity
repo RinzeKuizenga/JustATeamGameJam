@@ -976,6 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561779423}
   - component: {fileID: 1561779424}
+  - component: {fileID: 1561779425}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1028,6 +1029,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1561779425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561779422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacb982a42f7dba4ea6bf2de701f9280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  sceneName: 
+  mainmenusound: {fileID: 0}
 --- !u!1 &1919046424
 GameObject:
   m_ObjectHideFlags: 0
