@@ -1066,8 +1066,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
-      value: Assets/Dialog/Entries/Garden.txt
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4900000, guid: 7fe637a7d3fcad948bb063e5afe8ce82, type: 3}
     - target: {fileID: 3216547267569134902, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.70972997

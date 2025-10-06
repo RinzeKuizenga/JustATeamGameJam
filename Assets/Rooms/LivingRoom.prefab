@@ -1762,8 +1762,8 @@ PrefabInstance:
       objectReference: {fileID: 3337628568782251136}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
-      value: Assets/Dialog/Entries/Arrive1.txt
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4900000, guid: 81d691cbf7554aa4fb0bba7a24575240, type: 3}
     - target: {fileID: 3216547267569134902, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.3002211

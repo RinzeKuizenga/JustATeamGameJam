@@ -12,7 +12,7 @@ public class DialogTalk : MonoBehaviour
     public List<string> sentences;
 
     public int tickDelay = 1;
-    public string filepath;
+    public TextAsset filepath;
     public Move playerMoveComponent;
 
     private int textIndex = 0;
@@ -39,7 +39,7 @@ public class DialogTalk : MonoBehaviour
 
     public void Begin()
     {
-        var content = File.ReadAllLines(filepath);
+        var content = filepath.text.Split('\n');
 
         if (content == null)
         {

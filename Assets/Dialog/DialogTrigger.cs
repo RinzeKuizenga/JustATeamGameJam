@@ -6,7 +6,7 @@ public class DialogTrigger : MonoBehaviour
 {
     public DialogTalk dialog;
     public Transform canvas;
-    public string textFilePath;
+    public TextAsset textFilePath;
     public int id = 1;
     public int onlyAfterId = 0;
     public bool fired = false;

@@ -106,7 +106,6 @@ MonoBehaviour:
   sceneToLoad: {fileID: 102900000, guid: 2364cce116707ef4ebed7267e1721d80, type: 3}
   ui: {fileID: 0}
   dialogId: 8
-  interacted: 0
 --- !u!58 &5679642460523631118
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -761,8 +760,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
-      value: Assets/Dialog/Entries/PreMusic.txt
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4900000, guid: 1df73de488d6b2f4e8db4e627a412b0d, type: 3}
     - target: {fileID: 3216547267569134902, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.04
@@ -982,8 +981,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770658663306739205, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: textFilePath
-      value: Assets/Dialog/Entries/Music.txt
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4900000, guid: de7be0215373371499974efd60e36f70, type: 3}
     - target: {fileID: 3216547267569134902, guid: 63262461fdf757f439952f2477344e8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.19
