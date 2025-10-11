@@ -2600,6 +2600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   sceneName: ZiftScene 1
+  mainmenusound: {fileID: 0}
 --- !u!1001 &172801486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21517,7 +21518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1741899992}
         m_TargetAssemblyTypeName: SceneLoading, Assembly-CSharp
-        m_MethodName: LoadMinigame3
+        m_MethodName: UnloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21578,7 +21579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneName: 
+  sceneName: ZiftScene 1
+  mainmenusound: {fileID: 0}
 --- !u!1001 &1741996192
 PrefabInstance:
   m_ObjectHideFlags: 0

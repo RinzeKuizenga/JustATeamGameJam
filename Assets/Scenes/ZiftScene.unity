@@ -298,7 +298,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3149472}
         m_TargetAssemblyTypeName: SceneLoading, Assembly-CSharp
-        m_MethodName: LoadMinigame1
+        m_MethodName: UnloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneName: 
+  sceneName: ZiftScene
   mainmenusound: {fileID: 0}
 --- !u!1001 &38836252
 PrefabInstance:

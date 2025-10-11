@@ -1854,6 +1854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   sceneName: Ruben_Temma
+  mainmenusound: {fileID: 0}
 --- !u!1001 &163333009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15305,7 +15306,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1225014618}
         m_TargetAssemblyTypeName: SceneLoading, Assembly-CSharp
-        m_MethodName: LoadMinigame2
+        m_MethodName: UnloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15366,7 +15367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sceneName: 
+  sceneName: Ruben_Temma
+  mainmenusound: {fileID: 0}
 --- !u!1001 &1231079979
 PrefabInstance:
   m_ObjectHideFlags: 0
