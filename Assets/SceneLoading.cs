@@ -1,10 +1,11 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoading : MonoBehaviour
 {
     public Animator animator;
     public string sceneName;
+    public AudioSource mainmenusound;
     void Start()
     {
         
@@ -15,8 +16,14 @@ public class SceneLoading : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            mainmenusound.Play();
             animator.SetTrigger("Start");
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadGame()
@@ -32,12 +39,17 @@ public class SceneLoading : MonoBehaviour
                 continue;
 
             go.SetActive(true);
+
+            if (go.name == "Canvas")
+            {
+                go.transform.Find("ConfirmBox").GetComponent<confirmBox>().GoBack();
+                go.transform.Find("EBox").gameObject.SetActive(false);
+            }
         }
             
-
         foreach (var go in SceneManager.GetSceneByName(sceneName).GetRootGameObjects())
             go.SetActive(false);
 
-        SceneManager.UnloadScene(sceneName);
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 }

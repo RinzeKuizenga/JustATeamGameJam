@@ -60,10 +60,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 16921734542091996, guid: bef85d15ea5abe949a1c55e6e6fb1170, type: 3}
   canvas: {fileID: 0}
-  textFilePath: Assets/Dialog/Entries/WakeUp2.txt
+  textFilePath: {fileID: 4900000, guid: be0111db9abadae47a58dd5a60d7f279, type: 3}
   id: 2
   onlyAfterId: 0
   fired: 0
+  spawner: {fileID: 0}
+  trigger: 
+  animator: {fileID: 0}
+  endBox: {fileID: 0}
+  monster: {fileID: 0}
 --- !u!212 &5432997361258203656
 SpriteRenderer:
   m_ObjectHideFlags: 0

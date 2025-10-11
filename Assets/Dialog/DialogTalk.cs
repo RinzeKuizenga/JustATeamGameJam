@@ -12,7 +12,7 @@ public class DialogTalk : MonoBehaviour
     public List<string> sentences;
 
     public int tickDelay = 1;
-    public string filepath;
+    public TextAsset filepath;
     public Move playerMoveComponent;
 
     private int textIndex = 0;
@@ -20,6 +20,10 @@ public class DialogTalk : MonoBehaviour
     private int sentenceIndex = 0;
     private string lastSentence = string.Empty;
     public bool finished = false;
+    public GameObject ending;
+
+    public AudioSource talkVoice;
+    public AudioSource talkVoiceMom;
 
     private int ticks = 0;
 
@@ -35,7 +39,7 @@ public class DialogTalk : MonoBehaviour
 
     public void Begin()
     {
-        var content = File.ReadAllLines(filepath);
+        var content = filepath.text.Split('\n');
 
         if (content == null)
         {
@@ -70,6 +74,12 @@ public class DialogTalk : MonoBehaviour
 
         if (playerMoveComponent)
             playerMoveComponent.canMove = false;
+
+        if (talkVoice)
+            talkVoice.volume = 0.25f;
+
+        if (talkVoiceMom)
+            talkVoiceMom.volume = 0.25f;
     }
 
     private string GetSentence()
@@ -116,6 +126,17 @@ public class DialogTalk : MonoBehaviour
         if (sentenceIndex >= names.Count)
             return;
         nameBox.text = names[sentenceIndex];
+
+        if (names[sentenceIndex] == "Lili")
+        {
+            if (talkVoiceMom)
+                talkVoiceMom.Play();
+        }
+        else
+        {
+            if (talkVoice)
+                talkVoice.Play();
+        }
     }
 
     // Update is called once per frame
@@ -128,6 +149,13 @@ public class DialogTalk : MonoBehaviour
 
             sentences.Clear();
             names.Clear();
+
+            if (ending)
+            {
+                //Instantiate(ending);
+                ending.gameObject.SetActive(true);
+            }
+
             Destroy(gameObject);
         }
 

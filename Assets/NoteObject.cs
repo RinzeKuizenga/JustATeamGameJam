@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NoteObject : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class NoteObject : MonoBehaviour
     public int lane;
 
     private bool scored = false;
-    private string currentHitType = ""; 
+    public string currentHitType = ""; 
 
     void Update()
     {
@@ -23,6 +23,10 @@ public class NoteObject : MonoBehaviour
             else if (currentHitType == "Good")
             {
                 GameManager.instance.GoodHit(lane);
+            }
+            else if (currentHitType == "Missed")
+            {
+                GameManager.instance.NoteMissed(lane);
             }
 
             gameObject.SetActive(false); 
@@ -40,6 +44,11 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = true;
             currentHitType = "Good";
+        }
+        else if (other.CompareTag("EarlyActivator"))
+        {
+            canBePressed= true;
+            currentHitType = "Missed";
         }
     }
 
