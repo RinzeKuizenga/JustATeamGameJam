@@ -55,6 +55,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -76,6 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -104,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   sceneToLoad: {fileID: 102900000, guid: 2364cce116707ef4ebed7267e1721d80, type: 3}
+  sceneToLoadName: ZiftScene 1
   ui: {fileID: 0}
   dialogId: 8
 --- !u!58 &5679642460523631118
@@ -219,6 +223,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -240,10 +246,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3393297703320380375, guid: 13945aae83d4a23459fca9c9eb14807a, type: 3}
+  m_Sprite: {fileID: -676798113929786665, guid: 982d3375f45946446b8649ba740cbed6, type: 3}
   m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
